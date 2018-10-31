@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name="keywords" content="<yunu:config name='seo_keywords'/>">
+    <meta name="description" content="<yunu:config name='seo_description'/>">
+    <title>
+        <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>
+    </title>
+    <include file="public:header_style"/>
+</head>
+<body>
+<!--banner部分 begin-->
+<section class="layui-carousel" id="webBanner" style="width:100%;height:100%">
+    <include file="public:header" index="1"/>
+    <div carousel-item="">
+        <a class="web-banner-pic" style="background-image:url(__PUBLIC__/img/banner/banner1.jpg)" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>"></a>
+        <a class="web-banner-pic" style="background-image:url(__PUBLIC__/img/banner/banner2.jpg)" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>"></a>
+        <a class="web-banner-pic" style="background-image:url(__PUBLIC__/img/banner/banner3.jpg)" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>"></a>
+    </div>
+    <i class="layui-icon down-icon layui-icon-down"></i>
+</section>
+<!--banner部分 end-->
+<!--章鱼小思介绍 begin-->
+<section class="index-about full-banner" style="background-image: url(__PUBLIC__/img/index/index-about-bg.jpg);">
+    <div class="index-about-con padding-3vw sbc-text-center">
+        <div class="web-title sbc-text-center animated slideInUp fast wow" data-wow-delay="1s">
+            <img class="icon icon1" src="__PUBLIC__/img/other/title-icon-1.png" alt="">
+        </div>
+        <h2 class="animated slideInUp fast wow" data-wow-delay="1s">创新的DNA</h2>
+        <h2 class="animated slideInUp fast wow" data-wow-delay="1s">STEM教育综合服务商</h2>
+        <img class="pic1 padding-3vw animated slideInUp fast wow" data-wow-delay="1s" src="__PUBLIC__/img/index/index-about-1.png" alt="">
+        <p> 每次工业革命， </p>
+        <p>都是旧力量消失，新力量崛起， </p>
+        <p>长存的，是创新者。 </p><br/>
+        <p>将创新的DNA，&nbsp; </p>
+        <p>埋入孩子的大脑，&nbsp; </p>
+        <p>跟随章鱼小思STEM，让我们的孩子成为驱动时代的人。 </p>
+    </div>
+</section>
+<!--章鱼小思介绍 end-->
+<!--为什么是章鱼小思Inside begin-->
+<section class="index-why web-bg-1">
+    <div class="web-title sbc-text-center">
+        <img class="icon icon1" src="__PUBLIC__/img/other/title-icon-1.png" alt="">
+        <h2>为什么是章鱼小思<i>Inside</i></h2>
+    </div>
+    <div class="layui-container">
+        <div class="layui-row layui-col-space10">
+            <yunu:catlist cid="92" type="parent" limit="6" flag="0">
+                <div class="layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4">
+                    <a href="{$catlist.url}" title="{$catlist.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" target="_blank">
+                        <div class="web-pic-box index-why-pic">
+                            <img src="{$catlist.pic}" alt="{$catlist.title} - {$catlist.etitle} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                            <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+                            <div class="web-pic-title">
+                                <h2>{$catlist.title}</h2>
+                                <h3>{$catlist.subtitle}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </yunu:catlist>
+        </div>
+    </div>
+</section>
+<!--为什么是章鱼小思Inside end-->
+<!--教学活动 begin-->
+<section class="index-teaching web-bg-1">
+    <div class="web-title sbc-text-center">
+        <img class="icon icon2" src="__PUBLIC__/img/other/title-icon-2.png" alt="">
+        <h2>教学活动</h2>
+        <p class="web-subtitle">通过游戏活动在现实和想像的空间中往来,体验到各种新鲜的感受 学习到各种知识,构建起自我身心发展的“里程碑” </p>
+    </div>
+    <div class="layui-container sbc-space-between">
+        <div class="index-teaching-col-1">
+            <a class="index-teaching-box1" href="{$catlist.url}" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" target="_blank">
+                <div class="web-pic-box index-teaching-pic sbc-centered">
+                    <img src="__PUBLIC__/img/index/index-teaching-1.jpg" alt="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                    <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+                </div>
+            </a>
+            <a class="index-teaching-box2" href="{$catlist.url}" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" target="_blank">
+                <div class="web-pic-box index-teaching-pic">
+                    <img src="__PUBLIC__/img/index/index-teaching-2.jpg" alt="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                    <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+                </div>
+            </a>
+        </div>
+        <div class="index-teaching-col-2">
+            <a class="index-teaching-box3" href="{$catlist.url}" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" target="_blank">
+                <div class="web-pic-box index-teaching-pic">
+                    <img src="__PUBLIC__/img/index/index-teaching-3.jpg" alt="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                    <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+                </div>
+            </a>
+        </div>
+        <div class="index-teaching-col-3">
+            <a class="index-teaching-box4" href="{$catlist.url}" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" target="_blank">
+                <div class="web-pic-box index-teaching-pic">
+                    <img src="__PUBLIC__/img/index/index-teaching-4.jpg" alt="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                    <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+                </div>
+            </a>
+            <div class="index-teaching-row sbc-space-between">
+                <a class="index-teaching-box5" href="{$catlist.url}" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" target="_blank">
+                    <div class="web-pic-box index-teaching-pic">
+                        <img src="__PUBLIC__/img/index/index-teaching-5.jpg" alt="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                        <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+                    </div>
+                </a>
+                <a class="index-teaching-box6" href="{$catlist.url}" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" target="_blank">
+                    <div class="web-pic-box index-teaching-pic">
+                        <img src="__PUBLIC__/img/index/index-teaching-6.jpg" alt="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                        <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--教学活动 end-->
+<!--公办校•私立校 begin-->
+<section class="index-school">
+    <div class="layui-container">
+        <div class="layui-row index-school-con">
+            <div class="index-school-left layui-col-xs6 layui-col-sm6 layui-col-md6 layui-col-lg6">
+                <img src="__PUBLIC__/img/index/index-school-left.jpg" width="580" height="580" alt=""></div>
+            <div class="index-school-right layui-col-xs6 layui-col-sm6 layui-col-md6 layui-col-lg6">
+                <h2>公办校 • 私立校</h2>
+                <h3>Public schools and private schools</h3>
+                <hr>
+                <p>章鱼小思<i>Inside</i>向公立学校提供免费的教师培训及完善的课程。向学校和专业机构提供STEM及创客教育整体解决方案，从而让STEM教育更容易落地实施。</p>
+                <p>我们可以向学校派出师资，提供授课服务；也可以为学校自有教师提供系统的培训及能力提升服务。</p>
+                <a href="#" class="more">了解更多</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--公办校•私立校 end-->
+<!--1000多家公办学校选择我们 begin-->
+<section class="web-cooperation padding-3vw">
+    <div class="web-title sbc-text-center">
+        <img class="icon icon3" src="__PUBLIC__/img/other/title-icon-3.png" alt="">
+        <h2>200多家学校和机构选择章鱼小思服务</h2>
+    </div>
+    <div class="layui-container web-cooperation-content sbc-float-clear">
+        <yunu:list cid="93" titlelen="20" orderby="sort desc" limit="16">
+            <div class="web-cooperation-box ">
+                <div class="web-pic-box web-cooperation-pic">
+                    <img src="{$list.pic}" alt="{$list.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" title="{$list.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                </div>
+            </div>
+        </yunu:list>
+    </div>
+</section>
+<!--1000多家公办学校选择我们 end-->
+<include file="public:footer"/>
+</body>
+</html>

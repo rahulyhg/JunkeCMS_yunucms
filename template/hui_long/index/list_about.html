@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="<yunu:config name='seo_keywords'/>">
+    <meta name="description" content="<yunu:config name='seo_description'/>">
+    <title>{$category.title} - <yunu:config name="site_title"></title>
+    <include file="header:style"/>
+</head>
+<body>
+<!--内页banner部分  begin-->
+<section class="pBanner pBanner1">
+  <include file="public:header"/>
+  <div class="pBanner_con layui-container">
+    <h2 class="wow animated fadeInUp">About Us</h2>
+    <h3 class="wow animated fadeInUp" data-wow-delay="0.5s">关于我们</h3>
+  </div>
+</section>
+<!--内页banner部分 end-->
+<!--内页导航区域 begin-->
+<section class="pages_nav aBg">
+  <ul class="pagesNavUl layui-container">
+    <li class="active wow animated fadeInUp">
+      <a href="#introduce">公司介绍</a>
+    </li>
+    <li class="wow animated fadeInUp" data-wow-delay="0.5s">
+      <a href="#history">发展历程</a>
+    </li>
+    <li class="wow animated fadeInUp" data-wow-delay="1s">
+      <a href="#culture">企业文化</a>
+    </li>
+    <li class="wow animated fadeInUp" data-wow-delay="1.5s">
+      <a href="#qualifications">企业资质</a>
+    </li>
+  </ul>
+</section>
+<!--内页导航区域 end-->
+<!--公司简介区域 begin-->
+<section id="aIintroduction" class="sbc-padding-4vw aBg">
+    <div id="introduce"></div>
+    <section class="container layui-container clearfix">
+        <div class="layui-row">
+            <div class="Apic wow animated fadeInUp layui-col-xs5 layui-col-sm5 layui-col-md5 layui-col-lg5" data-wow-offset="70">
+                <img src="__PUBLIC__/img/About/aIntroduction.jpg" alt="" width="442" height="461">
+            </div>
+            <div class="Atext layui-col-xs7 layui-col-sm7 layui-col-md7 layui-col-lg7">
+                <div class="Atext_box wow animated fadeInUp" data-wow-offset="70">
+                    <h2>INTRODUCTION</h2>
+                    <h3>公司介绍</h3>
+                </div>
+                <div class="Atext_dec wow animated fadeInUp" data-wow-delay="0.5s" data-wow-offset="70">
+                    <p>辉龙公司坐落在长江三角洲开发重镇---江阴青阳镇，地处无锡市和江阴市之间，北倚长江、南临太湖，地理位置优越，交通便利，是理想的轻工业发展基地。</p>
+                    <p>
+                        公司专业研发和生产电加热器产品，广泛应用于新能源汽车、医疗器械、半导体、电力、化工、航空航天等领域。公司拥有先进的生产技术和完善的管理体系，先后通过了ISO9001、ISO/TS16949质量管理体系认证及ISO14001环境管理体系认证、欧盟CE认证、美国UL认证，许多产品现已填补国内空白，在国外已与美国、日本、新加坡等多家企业建立了稳定的合作，市场前景广阔。</p>
+                    <p>
+                        公司多年来坚持科技创新，组建了无锡市柔性加热器工程技术研究中心，与多名国内外行业专家建立了合作关系，并设立了海外工程师工作室，共同开展新产品的研发。公司现有国家实用新型专利20余项，在申请国内外发明专利多项，核心产品技术达到国内外领先水平。公司已被评为江苏省民营科技型企业和江苏省科技型中小企业。</p>
+                    <p>公司凭借在研发、生产和质量方面的优势，已成为了行业核心供应商。公司愿与国内外合作伙伴共同发展，共创辉煌！</p>
+                </div>
+            </div>
+        </div>
+    </section>
+  </section>
+<!--公司简介区域 end-->
+<!--发展历程区域 begin-->
+<section id="aHistory" class="sbc-padding-4vw">
+    <div id="history"></div>
+    <section class="aHistory_title sbc-text-center wow animated fadeInUp" data-wow-delay="0.4s" data-wow-offset="300">
+      <h2>DEVELOPMENT HISTORY</h2>
+      <h3>发展历程</h3>
+    </section>
+    <div class="aHistoryBanner wow fadeIn" data-wow-delay="0.9s" data-wow-offset="300">
+      <ul>
+          <yunu:list cid="85" titlelen="20" orderby="sort desc">
+              <li>
+                  <div class="aHistory_BigBox">
+                      <div class="aHistory_SmallBox">
+                          <div class="textBox">
+                              <h2>{$list.title}</h2>
+                              <h3>{$list.ftitle}</h3>
+                          </div>
+                          <div class="imgbox">
+                              <img src="{$list.pic}" alt="{$list.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" title="{$list.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                          </div>
+                      </div>
+                  </div>
+              </li>
+          </yunu:list>
+      </ul>
+      <div class="prev"><img src="__PUBLIC__/img/About/aHistory-arrow-left.png" alt=""></div>
+      <div class="next"><img src="__PUBLIC__/img/About/aHistory-arrow-right.png" alt=""></div>
+    </div>
+  </section>
+<!--发展历程区域 end-->
+<!--企业文化区域 begin-->
+<section id="aCulture" class="sbc-padding-4vw aBg">
+    <div id="culture"></div>
+    <section class="aCulture_title sbc-text-center wow animated fadeInUp" data-wow-delay="0.5s" data-wow-offset="250">
+      <h2>COMPANY CULTURE</h2>
+      <h3>企业文化</h3>
+    </section>
+    <div class="layui-container">
+        <div class="layui-row layui-col-space30">
+            <div class="layui-col-xs6 layui-col-sm6 layui-col-md6 layui-col-lg6 wow animated fadeInUp" data-wow-delay="1s" data-wow-offset="250">
+                <div class="aCulture_top sbc-space-between">
+                    <h2 class="aCulture_Tleft">企业目标</h2>
+                    <div class="aCulture_Tright">
+                        <img src="__PUBLIC__/img/About/aculture_1.png" alt="">
+                    </div>
+                </div>
+                <p class="aCulture_txt">立足国内市场，开拓国际市场，做世界一流的电热产品制造商</p>
+            </div>
+            <div class="layui-col-xs6 layui-col-sm6 layui-col-md6 layui-col-lg6 wow animated fadeInUp" data-wow-delay="1.3s" data-wow-offset="250">
+                <div class="aCulture_top sbc-space-between">
+                    <h2 class="aCulture_Tleft">企业理念</h2>
+                    <div class="aCulture_Tright">
+                        <img src="__PUBLIC__/img/About/aculture_2.png" alt="">
+                    </div>
+                </div>
+                <p class="aCulture_txt">创新、诚信、务实、敬业</p>
+            </div>
+            <li class="layui-col-xs6 layui-col-sm6 layui-col-md6 layui-col-lg6 wow animated fadeInUp" data-wow-delay="1.6s" data-wow-offset="250">
+                <div class="aCulture_top sbc-space-between">
+                    <h2 class="aCulture_Tleft">企业价值观—<span>成功在于创新，做强在于投入，收获在于共享</span></h2>
+                    <div class="aCulture_Tright">
+                        <img src="__PUBLIC__/img/About/aculture_3.png" alt="">
+                    </div>
+                </div>
+                <p class="aCulture_txt">
+                    创新是成功的原动力，创新是自身价值的体现，创新是自身无形资产的积累，创新是辉龙公司在竞争中立于不败之地的保障。只有投入才能做大做强，不断提高公司的竞争力，才能长久持续的发展。收获了在于共享才能让员工以公司为家，将公司的利益与员工的利益紧密连接，建立和谐的雇佣关系，有了每位员工的奋斗，才有辉龙公司的辉煌发展。</p>
+            </li>
+            <div class="layui-col-xs6 layui-col-sm6 layui-col-md6 layui-col-lg6 wow animated fadeInUp" data-wow-delay="1.9s" data-wow-offset="250">
+                <div class="aCulture_top sbc-space-between">
+                    <h2 class="aCulture_Tleft">企业精神—<span>团队共进，敢为人先，责无旁贷</span></h2>
+                    <div class="aCulture_Tright">
+                        <img src="__PUBLIC__/img/About/aculture_4.png" alt="">
+                    </div>
+                </div>
+                <p class="aCulture_txt">
+                    个人能量是有限的，个人优势是不持久的，只有讲团队合作，团队配合，取长互补，力量才能达到最大，没有完美的个人，只有最好的团队。无论对于个人还是团队，只有敢于创新，敢于做第一，才能获得市场先机。我们敢于承担责任，授权但不授责，不能推托责任。言必信，行必果。</p>
+            </div>
+        </div>
+    </div>
+  </section>
+<!--企业文化区域 end-->
+<!--企业资质区域 begin-->
+<section class="aQuSlide layui-container">
+    <div id="qualifications"></div>
+    <section class="aQuTop">
+        <div class="aQuTitle wow fadeInUp" data-wow-delay="0.5s" data-wow-offset="250">
+            <h2>COMPANY QUALIFICATION</h2>
+            <p>企业资质</p>
+        </div>
+    </section>
+    <div class="aQuSlideGroup">
+        <div class="parHd">
+            <ul class="clearfix wow fadeInUp" data-wow-delay="0.7s" data-wow-offset="250">
+                <li>企业荣誉</li>
+                <li>行业认证</li>
+            </ul>
+        </div>
+        <div class="parBd wow fadeInUp" data-wow-delay="1s" data-wow-offset="250">
+            <div class="slideBox">
+                <a class="sPrev" href="javascript:void(0)"><i class="fas fa-angle-left"></i></a>
+                <ul>
+                    <yunu:list cid="95" titlelen="20" orderby="sort desc">
+                    <li>
+                            <a  class="pic" href="{$list.url}" style="background:url({$list.pic}) no-repeat center/
+                            contain #f8f9f7" target="_blank" title="{$list.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>"> </a>
+
+                        <div class="title">
+                            <a href="{$list.url}" title="{$list.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" target="_blank">{$list.title}</a>
+                        </div>
+                    </li>
+                    </yunu:list>
+                </ul>
+                <a class="sNext" href="javascript:void(0)"><i class="fas fa-angle-right"></i></a>
+            </div>
+            <div class="slideBox">
+                <a class="sPrev" href="javascript:void(0)"><i class="fas fa-angle-left"></i></a>
+                <ul>
+                    <yunu:list cid="96" titlelen="20" orderby="sort desc">
+                        <li>
+                                <a  class="pic" href="{$list.url}" style="background:url({$list.pic}) no-repeat center/
+                            contain #f8f9f7" target="_blank" title="{$list.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>"> </a>
+
+                            <div class="title">
+                                <a href="{$list.url}" title="{$list.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" target="_blank">{$list.title}</a>
+                            </div>
+                        </li>
+                    </yunu:list>
+                </ul>
+                <a class="sNext" href="javascript:void(0)"><i class="fas fa-angle-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /* 内层图片滚动切换 */
+        jQuery(".aQuSlideGroup .slideBox").slide({
+            mainCell: "ul",
+            vis: 4,
+            prevCell: ".sPrev",
+            nextCell: ".sNext",
+            delayTime:500,
+            effect: "leftLoop",
+            autoPlay: true,
+        });
+        /* 外层tab切换 */
+        jQuery(".aQuSlideGroup").slide({titCell: ".parHd li", mainCell: ".parBd"});
+    </script>
+</section>
+<!--企业资质区域 end-->
+<include file="public:footer"/>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title><if condition="strlen($category.seo_title) neq 0">{$category.seo_title}<else/>{$category.title}-<yunu:config name="site_title"></if></title>
+    <meta name="keywords" content="{$category.seo_keywords}">
+    <meta name="description" content="{$category.seo_desc}">
+    <include file="public:header_style"/>
+</head>
+<body>
+<!--banner部分 begin-->
+<section class="layui-carousel" id="webBanner" style="width:100%;height:100%">
+    <include file="public:header"/>
+    <div carousel-item="">
+        <a class="web-banner-pic web-banner-mask" style="background-image:url(__PUBLIC__/img/banner/pages-1.jpg)" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+        <div class="web-banner-con">
+            <h2>全国青少年机器人等级考试</h2>
+        </div>
+        </a>
+    </div>
+    <i class="layui-icon down-icon layui-icon-down"></i>
+</section>
+<!--banner部分 end-->
+<section class="layui-container">
+    <section class="page1-con1">
+        <div class="web-title sbc-text-center">
+            <img class="icon icon1" src="__PUBLIC__/img/other/title-icon-1.png" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <h2>章鱼小思Inside提供的服务</h2>
+            <p class="web-subtitle">1.无锡.苏州.常州授权培训机构授予</p>
+            <p class="web-subtitle">2.无锡.苏州.常州地区考点申请
+            <p class="web-subtitle">3.考试裁判员培训及考核</p>
+            <p class="web-subtitle">4.师资培训</p>
+            <p class="web-subtitle">5.考试器材(明确价格499元/套)</p>
+            <p class="web-subtitle">6.学生培训</p>
+        </div>
+        <div class="sbc-justify-center">
+            <div class="web-pic-box pages-pic">
+                <img src="__PUBLIC__/img/page1/page1-1.jpg" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+            </div>
+            <div class="web-pic-box pages-pic">
+                <img src="__PUBLIC__/img/page1/page1-2.jpg" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+            </div>
+            <div class="web-pic-box pages-pic">
+                <img src="__PUBLIC__/img/page1/page1-3.jpg" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+            </div>
+        </div>
+    </section>
+    <section class="page1-con2">
+        <div class="web-title sbc-text-center">
+            <img class="icon icon1" src="__PUBLIC__/img/other/title-icon-1.png" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <h2>2018年第4次考试日期：12月8日</h2>
+            <p class="web-subtitle">无锡.苏州.常州 地区考试点</p>
+        </div>
+        <div class="sbc-justify-center">
+            <div class="web-pic-box pages-pic">
+                <img src="http://iph.href.lu/800x650?text=百度地图截图" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+                <p class="pic-dec">无锡市北塘区少年宫</p>
+            </div>
+            <div class="web-pic-box pages-pic">
+                <img src="http://iph.href.lu/800x650?text=百度地图截图" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+                <p class="pic-dec">无锡金桥实验学校</p>
+            </div>
+            <div class="web-pic-box pages-pic">
+                <img src="http://iph.href.lu/800x650?text=百度地图截图" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+                <p class="pic-dec">宜兴市实验小学</p>
+            </div>
+            <div class="web-pic-box pages-pic">
+                <img src="http://iph.href.lu/800x650?text=百度地图截图" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+                <p class="pic-dec">苏州xxxx</p>
+            </div>
+        </div>
+    </section>
+</section>
+<include file="public:footer"/>
+</body>
+</html>

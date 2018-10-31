@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title><if condition="strlen($category.seo_title) neq 0">{$category.seo_title}<else/>{$category.title}-<yunu:config name="site_title"></if></title>
+    <meta name="keywords" content="{$category.seo_keywords}">
+    <meta name="description" content="{$category.seo_desc}">
+    <include file="public:header_style"/>
+</head>
+<body>
+<!--banner部分 begin-->
+<section class="layui-carousel" id="webBanner" style="width:100%;height:100%">
+    <include file="public:header" />
+    <div carousel-item="">
+        <a class="web-banner-pic web-banner-mask" style="background-image:url(__PUBLIC__/img/banner/pages-2.jpg)" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+        <div class="web-banner-con">
+            <h2>全国中小学信息技术创新与实践活动</h2>
+            <h2>— NOC —</h2>
+        </div>
+        </a>
+    </div>
+    <i class="layui-icon down-icon layui-icon-down"></i>
+</section>
+<!--banner部分 end-->
+<section class="full-banner web-banner-pic sbc-space-between" style="background-image:url(__PUBLIC__/img/page2/page2-full-banner-1.jpg)">
+    <div class="banner-con">
+        <h2>全国中小学信息技术创新与实践活动</h2>
+        <p>NOC大赛是在中央电化教育馆的指导下，由中国教育技术协会和中国发明协会主办，得到国家知识产权局和教育部教师工作司、教育部基础教育二司支持，由中国信息技术教育杂志社、创新时代杂志社承办。自举办以来已有超过5800万师生参与。</p>
+    </div>
+</section>
+<section class="layui-container">
+    <div class="web-title sbc-text-center">
+        <img class="icon icon1" src="__PUBLIC__/img/other/title-icon-1.png" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+        <h2>八项主推活动</h2>
+        <p class="web-subtitle">Eight main push activities </p>
+    </div>
+    <div class="page2-con1 sbc-justify-center">
+        <div class="web-pic-box pages-pic">
+                <img src="__PUBLIC__/img/page2/page2-1.jpg" alt="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" title="<yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+                <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+            </div>
+        <div class="web-pic-box pages-pic">
+            <img src="__PUBLIC__/img/page2/page2-2.jpg" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+        </div>
+        <div class="web-pic-box pages-pic">
+            <img src="__PUBLIC__/img/page2/page2-3.jpg"  title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+        </div>
+        <div class="web-pic-box pages-pic">
+            <img src="__PUBLIC__/img/page2/page2-4.jpg"  title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+        </div>
+        <div class="web-pic-box pages-pic">
+            <img src="__PUBLIC__/img/page2/page2-5.jpg"  title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+        </div>
+        <div class="web-pic-box pages-pic">
+            <img src="__PUBLIC__/img/page2/page2-6.jpg"  title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+        </div>
+        <div class="web-pic-box pages-pic">
+            <img src="__PUBLIC__/img/page2/page2-7.jpg"  title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+        </div>
+        <div class="web-pic-box  pages-pic">
+            <img src="__PUBLIC__/img/page2/page2-8.jpg"  title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <div class="web-pic-box-load">图片正在加载中<span class="web-pic-box-dotting"></span></div>
+        </div>
+    </div>
+    <ul class="pages-con2 padding-3vw">
+       <li>
+           <img src="__PUBLIC__/img/page2/page2-con2-1.jpg" title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+           <p>全国中小学电脑制作活动</p>
+       </li>
+        <li>
+            <img src="__PUBLIC__/img/page2/page2-con2-2.jpg"  title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <p>全国青少年信息学奥林匹克竞赛</p>
+        </li>
+        <li>
+            <img src="__PUBLIC__/img/page2/page2-con2-3.jpg"  title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <p>世界物联网博览会青少年创新创客赛</p>
+        </li>
+        <li>
+            <img src="__PUBLIC__/img/page2/page2-con2-4.jpg"  title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <p>WRC世界机器人大赛</p>
+        </li>
+        <li>
+            <img src="__PUBLIC__/img/page2/page2-con2-5.jpg"  title="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>" alt="{$category.title} - <yunu:config name="seo_title"/> - <yunu:config name="site_title"/>">
+            <p>中美青年创客大赛</p>
+        </li>
+    </ul>
+</section>
+<include file="public:footer"/>
+</body>
+</html>
