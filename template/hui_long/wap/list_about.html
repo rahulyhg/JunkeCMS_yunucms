@@ -7,8 +7,6 @@
     <meta name="description" content="<yunu:config name='seo_description'/>">
     <title>{$category.title}-<yunu:config name="site_title"/></title>
     <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v2/mip.css">
-    <link rel="stylesheet" href="//code.sunbingchen.cn/layui/css/layui.css" />
-    <link rel="stylesheet" href="//code.sunbingchen.cn/sbc-ui/layui-fix.css" />
     <link rel="canonical" href="<yunu:config name='wapurl'/>">
     <style mip-custom>
         .mip-head{position:fixed;top:0;left:0;width:100%;background-color:#e06940;z-index:99;border-bottom:.1vw solid #ccc;height:13vw}
@@ -44,12 +42,7 @@
         .mip-foot-nav a:first-child{border-left:none}
         .mip-foot-nav a .mip-layout-container{width:29px;height:19px;display:block;margin:5px auto}
         .mip-foot-nav a span{font-size:13px;color:#fff}
-        .mip-nav-box .mip-nav-con{margin: 2vw 1vw;border:.1vw solid #ecbdab;border-right-color:#742c29;border-bottom-color:#742c29;background-color:#e06940;font-size:0}
-        .mip-nav-box .mip-nav-con a{display:inline-block;color:#fff;    font-size: 4vw;text-align: center;width: 100%;line-height: 7vw;}
-        .mip-article-list{margin:1vw 2vw 6vw}
-        .mip-article-list .mip-article-list-box > a{display: flex;justify-content: space-between;color: #666;font-size: 3.6vw;line-height: 8vw;border-bottom: .2vw dashed #ccc;}
-        .mip-article-list .mip-article-list-box > a .title{width:65%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-
+        .mip-content p{margin: 2vw 3vw;font-size: 3.4vw;line-height: 1.8;}
     </style>
     <noscript>
         <style mip-officialrelease>
@@ -58,29 +51,11 @@
     </noscript>
 </head>
 <body>
-<include file="public:header" />
-<!--导航块 begin-->
-<section class="mip-nav-box layui-container">
-    <div class="layui-row">
-        <yunu:catlist cid="$category['id']"  type="parent" orderby="sort desc" >
-            <div class="mip-nav-con layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4">
-                <a href="{$catlist.url}">{$catlist.title}</a>
-            </div>
-        </yunu:catlist>
+    <include file="public:header" />
+    <div class="mip-content">
+        <div class="mip-text">
+            {$category.content}
+        </div>
     </div>
-</section>
-<!--导航块 end-->
-<!--内容页 begin-->
-<ul class="mip-article-list">
-    <yunu:list cid="$cid" orderby="sort desc" limit="800">
-    <li class="mip-article-list-box">
-        <a href="{$list.url}" title="{$list.title}">
-            <span class="title">{$list.title}</span><span class="date">{$list.update_time|date='Y-m-d',###}</span>
-        </a>
-    </li>
-    </yunu:list>
-</ul>
-<!--内容页 end-->
-<include file="public:footer" />
-<script src="https://mipcache.bdstatic.com/static/v2/mip-sidebar/mip-sidebar.js"></script>
+    <include file="public:footer" />
 </html>
