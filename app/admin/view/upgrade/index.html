@@ -1,6 +1,6 @@
 {include file="public/header" /}
 <style>
-    .mcolor{ color:#0099cc;}
+    .mcolor{ color:#09c;}
     .mcolor2{ color:#f00; }
 </style></head>
 <body>
@@ -16,7 +16,7 @@
                 <div class="ui_prompt">
                     <p class="ui_prompt_tit">温馨提示</p>
                     <p>1、云平台地址
-                        <a href="http://www.yunucms.com" target="_blank" class="mcolor">http://www.junke158.com</a></p>
+                        <a href="http://www.junke158.com" target="_blank" class="mcolor">http://www.junke158.com</a></p>
                     <p>2、通信正常后可继续操作</p>
                     <p>3、只有绑定了官网云平台帐号，授权认证后可使用在线升级服务</p>
                 </div>
@@ -30,7 +30,8 @@
                     <label class="layui-form-label">绑定账号</label>
                     <div class="layui-form-label" style="width:500px; text-align:left;">
                         {if condition="config('cloud.identifier')"}
-                        {:config('cloud.identifier')} <a href="javascript:void(0);" class="mcolor cloudBind">重新绑定</a>
+                        {:config('cloud.identifier')}
+                        <!--<a href="javascript:void(0);" class="mcolor cloudBind">重新绑定</a>-->
                         {else /}
                         <a href="javascript:void(0);" class="mcolor2 cloudBind">绑定云平台账号</a>
                         {/if}
@@ -40,7 +41,7 @@
                     <label class="layui-form-label">授权认证</label>
                     <div class="layui-form-label" style="width:500px; text-align:left;">
                         {if condition="config('cloud.grant')"}
-                        <span class="mcolor">已认证</span>
+                        <span class="mcolor">已认证 {:config('yunucms.grant')}</span>
                         <!--<a href="javascript:void(0);" class="mcolor copyright">&nbsp;&nbsp;[ 更改后台版权 ]</a>-->
                         {else /}
                         <span class="mcolor2">未认证 (官网授权后，需重新绑定云平台帐号)</span>
@@ -121,43 +122,43 @@
     </form>
 </script>
 <script>
-    layui.use(['form', 'common'], function () {
-        var $ = layui.jquery;
-        $form = $('form');
-        var form = layui.form(), layer = layui.layer, common = layui.common;
+    layui.use(['form','common'],function(){
+        var $=layui.jquery;
+        $form=$('form');
+        var form=layui.form(),layer=layui.layer,common=layui.common;
 
-        if ('{$html_status}' == '1') {
+        if('{$html_status}'=='1'){
             $('#connectionStatus').html('<font class="mcolor">通信正常</font>');
             $('.showupgeade').show();
-        } else {
+        }else{
             $('#connectionStatus').html('<font class="mcolor2">通信异常</font>');
             $('.showupgeade').hide();
         }
 
-        $('.cloudBind').on('click', function () {
+        $('.cloudBind').on('click',function(){
             layer.open({
-                title: '绑定云平台 / <a href="http://www.yunucms.com/index/index/is_register/1?domain={$_SERVER["SERVER_NAME"]}" target="_blank" class="mcolor">注册云平台</a>',
-                id: 'popLoginBox',
-                area: '380px',
-                content: $('#popCloudBind').html(),
-                btn: ['确认绑定', '取消'],
-                btnAlign: 'c',
-                move: false,
-                yes: function (index) {
-                    var tips = $('#resultTips');
+                title:'绑定云平台 / <a href="http://www.yunucms.com/index/index/is_register/1?domain={$_SERVER["SERVER_NAME"]}" target="_blank" class="mcolor">注册云平台</a>',
+                id:'popLoginBox',
+                area:'380px',
+                content:$('#popCloudBind').html(),
+                btn:['确认绑定','取消'],
+                btnAlign:'c',
+                move:false,
+                yes:function(index){
+                    var tips=$('#resultTips');
                     tips.html('请稍后，云平台通信中...');
                     $.post('{:url('
-                    ')}', $('#editForm').serialize(), function (res) {
-                        if (res.code == 1) {
-                            common.layerAlertS(res.msg, '提示');
-                            setTimeout(function () {
+                    ')}', $('#editForm').serialize(), function(res){
+                        if(res.code==1){
+                            common.layerAlertS(res.msg,'提示');
+                            setTimeout(function(){
                                 location.reload();
-                            }, 3000);
-                        } else {
+                            },3000);
+                        }else{
                             tips.addClass('mcolor2').html(res.msg);
-                            setTimeout(function () {
+                            setTimeout(function(){
                                 tips.removeClass('mcolor2').html('');
-                            }, 3000);
+                            },3000);
                         }
                     }
                 )
@@ -167,30 +168,30 @@
             });
         });
 
-        $('.copyright').on('click', function () {
+        $('.copyright').on('click',function(){
             layer.open({
-                title: '更改后台版权',
-                id: 'popCopyBox',
-                area: '380px',
-                content: $('#popCopyright').html(),
-                btn: ['确认更改', '取消'],
-                btnAlign: 'c',
-                move: false,
-                yes: function (index) {
-                    var tips = $('#resultTips');
+                title:'更改后台版权',
+                id:'popCopyBox',
+                area:'380px',
+                content:$('#popCopyright').html(),
+                btn:['确认更改','取消'],
+                btnAlign:'c',
+                move:false,
+                yes:function(index){
+                    var tips=$('#resultTips');
                     $.post('{:url('
-                    system / copy
-                    ')}', $('#copyForm').serialize(), function (res) {
-                        if (res.code == 1) {
-                            common.layerAlertS(res.msg, '提示');
-                            setTimeout(function () {
+                    system/copy
+                    ')}', $('#copyForm').serialize(), function(res){
+                        if(res.code==1){
+                            common.layerAlertS(res.msg,'提示');
+                            setTimeout(function(){
                                 location.reload();
-                            }, 3000);
-                        } else {
+                            },3000);
+                        }else{
                             tips.addClass('mcolor2').html(res.msg);
-                            setTimeout(function () {
+                            setTimeout(function(){
                                 tips.removeClass('mcolor2').html('');
-                            }, 3000);
+                            },3000);
                         }
                     }
                 )

@@ -1,6 +1,7 @@
 <?php
 namespace app\admin\controller;
 use app\admin\model\AreaModel;
+use app\admin\model\MediaModel;
 use think\Config;
 
 class System extends Common
@@ -108,6 +109,7 @@ class System extends Common
             $param['api_wyc'] = array_key_exists("api_wyc", $param) ? 1 : 0;
             $param['api_xxts'] = array_key_exists("api_xxts", $param) ? 1 : 0;
             $param['api_pmjkhq'] = array_key_exists("api_pmjkhq", $param) ? 1 : 0;
+            $param['api_media'] = array_key_exists("api_media", $param) ? 1 : 0;
   
             setConfigfile($coffile, add_slashes_recursive(array_merge($conflist, $param)));
 
@@ -129,6 +131,19 @@ class System extends Common
         $data['state'] = $mainkeywords ? 1 : 0;
         return json_encode($data);
     }
+
+    //验证用户开启媒体联盟
+    public function checkMedia()
+    {
+        if(request()->isAjax()){
+            $apikey = input('apikey'); 
+            $media = new MediaModel(); 
+            $domainid = $media->checkmedia($apikey);
+            $data['state'] = $domainid ? 1 : 0;
+            return json_encode($data);
+        }
+    }
+
     //上传设置
     public function upload()
     {

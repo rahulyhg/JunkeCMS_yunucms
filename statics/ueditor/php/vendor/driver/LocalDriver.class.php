@@ -278,17 +278,17 @@ class LocalDriver
         $this->fileName = $this->getFileName();
         $dirname = dirname($this->filePath);
 
+        $mainfilepath = str_replace(DS."statics".DS."ueditor".DS."php".DS."vendor".DS."driver".DS."LocalDriver.class.php", '', __FILE__);
+
         //检查文件大小是否超出限制
         if (!$this->checkSize()) {
             $this->stateInfo = $this->getStateInfo("ERROR_SIZE_EXCEED");
             return;
         }
-/*        mkdir(dirname(__FILE__).'../../../../../..', 0777, true);
-        var_dump($this->filePath);
-        var_dump($dirname);
-        exit();*/
-        $this->filePath = dirname(__FILE__).'../../../../../..'.$this->filePath;
-        $dirname = dirname(__FILE__).'../../../../../..'.$dirname;
+
+        $this->filePath = $mainfilepath.$this->filePath;
+        $dirname = $mainfilepath.$dirname;
+
         //创建目录失败
         if (!file_exists($dirname) && !mkdir($dirname, 0777, true)) {
             $this->stateInfo = $this->getStateInfo("ERROR_CREATE_DIR");
@@ -299,7 +299,10 @@ class LocalDriver
         }
 
         //移动文件
-        if (!(file_put_contents($this->filePath, $img) && file_exists($this->filePath))) { //移动失败
+        $fileget = file_put_contents($this->filePath, $img);
+        $fileexists = file_exists($this->filePath);
+
+        if (!($fileget && $fileexists)) { //移动失败
             $this->stateInfo = $this->getStateInfo("ERROR_WRITE_CONTENT");
         } else { //移动成功
             $this->stateInfo = $this->stateMap[0];

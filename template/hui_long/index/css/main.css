@@ -99,7 +99,7 @@ h3{font-size:1.4vw;line-height:1.4}
 .Iapplication-box1 .textbox, .Iapplication-box3 .textbox{background-color:#ea5521}
 .Iapplication-box1 .textbox a, .Iapplication-box3 .textbox a{color:#fff}
 .Iapplication-box1 .textbox-content, .Iapplication-box3 .textbox-content{background-color:#a6a6a6}
-.Iapplication-box1 .pic, .Iapplication-box3 .pic{left:0;width:55%;height:18vw}
+.Iapplication-box1 .pic, .Iapplication-box3 .pic{left:0;width:55%;height:25vw}
 .Iapplication-box1 .textbox-content .title, .Iapplication-box3 .textbox-content .title{position:absolute;top:3vw;left:23%;color:#fff}
 .Iapplication-box1 a:hover .textbox-content .title, .Iapplication-box3 a:hover .textbox-content .title{left:25%}
 .Iapplication-box1 .textbox-content .ico, .Iapplication-box3 .textbox-content .ico{top:15vw;left:23%;background:url(../img/Iapplication/Iapplication-icon.png) no-repeat center}

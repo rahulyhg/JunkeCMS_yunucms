@@ -33,6 +33,7 @@ class Common extends Controller{
             'admin/area/showurl',
             'admin/content/baidu',
             'admin/content/xzh',
+            'admin/content/media',
         ];
         $version = include_once(ROOT_PATH.'version.php');
         config($version);

@@ -4,6 +4,7 @@ use app\admin\model\ContentModel;
 use app\admin\model\CategoryModel;
 use app\admin\model\DiyfieldModel;
 use app\admin\model\AreaModel;
+use app\admin\model\MediaModel;
 use think\Config;
 use think\Db;
 use Aip\AipNlp;
@@ -380,6 +381,16 @@ class Content extends Common
         return json(['code' => 1, 'data' => $flag['data'], 'msg' => '已更新']);
     }
 
+    public function mainurl()
+    {
+        $ids = input('param.ids');
+        $mainurl = input('param.mainurl');
+        $db = Db::name('content');
+
+        $flag = $db->where('id', 'in', $ids."0")->setField(['mainurl'=>$mainurl]);
+        return json(['code' => 1, 'data' => $flag['data'], 'msg' => '已更新']);
+    }
+
     public function baidu()
     {
         $ids = input('param.ids');
@@ -455,6 +466,58 @@ class Content extends Common
             return json(['code' => 1, 'data' => '', 'msg' => "成功推送：".$numb." 条URL"]);
         }else{
             return json(['code' => 0, 'data' => '', 'msg' => '请先设置百度主动推送API']);
+        }
+
+    }
+
+    //媒体联盟推送
+    public function media()
+    {
+        $ids = input('param.ids');
+
+        $media = new MediaModel(); 
+        $domainid = $media->checkmedia(config('sys.api_mediaapikey') ? config('sys.api_mediaapikey') : '');
+        if (!$domainid || !config('sys.api_media')) {
+            return json(['code' => 0, 'msg' => '授权帐号未购买媒体联盟服务']);
+        }
+
+        $content = new ContentModel();
+        if ($domainid) {
+            $conlist = $content->getContentByWhere(['id'=>['IN', $ids."0"]], 1, 100);
+            $infolist = [];
+            foreach ($conlist as $k => $v) {
+                $con = $content->getOneContent($v['id']);
+                $data['title'] = $v['title'];
+                $data['content'] = isset($con['content']) ? $con['content'] : '';
+                //图片资源URL更新
+                if ($data['content']) {
+
+                    $editcon = $data['content'];
+                    $pattern = "/<[img|IMG].*?src=[\'|\"](.*?(?:[\.gif|\.jpg|\.png]))[\'|\"].*?[\/]?>/i";
+                    preg_match_all($pattern, $editcon, $matchContent);
+
+                    if ($matchContent[1]) {
+                        foreach ($matchContent[1] as $k => $v) {
+                            //判断本地是否已存在该文件
+                            $newimgsrc = $media->editImgSrc($v);
+                            if ($newimgsrc != $v) {
+                                $editcon = str_replace($v, $newimgsrc, $editcon);
+                            }
+                        }
+                    }
+                }
+                $data['content'] = $editcon;
+                $infolist[] = $data;
+            }
+
+            $info = $media->pushContent($domainid, $infolist); 
+            if ($info['status']) {
+                return json(['code' => 1, 'msg' => "成功推送：".$info['oknum']." 条内容，失败：".$info['errnum']." 条内容，剩余：".$info['num']." 条！"]);
+            }else{
+                return json(['code' => 0, 'msg' => $info['msg']]);
+            }
+        }else{
+            return json(['code' => 0, 'msg' => '授权帐号未购买媒体联盟服务']);
         }
 
     }
@@ -579,6 +642,7 @@ class Content extends Common
                     $html .= '</div>';
 
                     $ueditor .= 'UE.getEditor("'.$v['field'].'", option);';
+
                     break;
                 case 'editor'://富文本编辑器
     				$html .= '<div class="layui-form-item">';

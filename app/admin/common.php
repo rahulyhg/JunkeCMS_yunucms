@@ -442,7 +442,7 @@ function send_post($url, $post_data, $header = 'x-www-form-urlencoded') {
 }
 //伪原创
 function create_appsecret($appid, $apikey) {
-    return md5($appid.$apikey.$_SERVER['REMOTE_ADDR']);
+    return md5($appid.$apikey);
 }
 
 

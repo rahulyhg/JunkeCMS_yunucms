@@ -191,7 +191,7 @@ class Qiniu extends Base{
 		}
 
 		foreach ( $source as $img_url ) {
-		    $info = $this->qiniu->fetchFile( $img_url ,$ue_config );
+		    $info = $this->qiniu->fetchFile($img_url ,$ue_config );
 		    array_push($list, array(
 		        "state"    => $info["state"],
 		        "url"      => $info["url"],

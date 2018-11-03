@@ -65,6 +65,11 @@ class QiniuDriver{
 	 */
 
 	public function fetchFile( $image_url,$ue_config ){
+		//重组第三方拉取URL
+		$io_host = $this->uploadQiniuUrl;
+		$io_host = str_replace("qiniu.com", "qbox.me", $io_host);
+		$io_host = str_replace("up", "iovip", $io_host);
+
 		// 要抓取的URL
 		$image_url   = trim($image_url);
 		// 解析Url中的Path然后根据Path获取文件名称
@@ -80,15 +85,18 @@ class QiniuDriver{
 		// 七牛POST的PATH地址
 		$post_path   = "/fetch/". $encoded_uri ."/to/". $encoded_entry_uri;
 		// POST URL
-		$url   = $this->qiniu_io_host . $post_path;
+		$url   = $io_host . $post_path;
 		// 抓取Token
 		$token = $this->getSign($post_path."\n");
+
 		// 返回数据
 		$response = $this->request($url, 'POST', array('Authorization'=>"QBox $token"));
+
 		// 如果有错误信息
-		if( !empty($result['error']) ){
+		if( !empty($response['error']) ){
 			return array(
-				'state' => $result['error']
+				'state' => $response['error'], 
+				"url"  	=> $image_url,
 			);
 		}
 		// 拼接上传到七牛的地址

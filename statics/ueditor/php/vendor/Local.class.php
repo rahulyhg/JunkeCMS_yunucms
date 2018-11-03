@@ -75,7 +75,6 @@ class Local extends Base{
 	 */
 
 	public function catchimage(){
-
 		$ue_config = $this->getUeConfig();
 		/* 上传配置 */
 		$config = array(

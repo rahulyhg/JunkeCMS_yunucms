@@ -13,7 +13,7 @@ class ContentModel extends Model
         $info = db('diy_'.$tabname)->where(['conid'=>$con['vid']])->find();
         
         if ($info) {
-            $info['url'] = $this->getContentUrl($con);
+
             $con = array_merge($con, $info);
         }
         foreach ($con as $k => $v) {
@@ -27,19 +27,38 @@ class ContentModel extends Model
         if (!$area) {
             $area = session('sys_areainfo');
         }
-        if ($area) {
+        if ($area ) {
             $misarea = db('category')->where(['id'=>$con['cid']])->value('isarea');
             //$con['title'] = array_key_exists("ys_title", $con) ? $con['ys_title'] : $con['title'];
 
             $con['alltitle'] = array_key_exists("alltitle", $con) ? $con['alltitle'] : $con['title'];
             $con['alltitle'] = $misarea ? $area['stitle'].$con['alltitle'] : $con['alltitle'];
 
-            $con['title'] = $misarea ? $area['stitle'].$con['title'] : $con['title'];
-        }
+            //地区分站下情况
+            $mainurlopen = false;
+            if (!config('sys.seo_default_area')) { //未设置默认地区情况下启用
+                $areastr = isset($con['area']) ? $con['area'] : '';
+                if (!$areastr || $areastr == ',,') {
+                    //不存在地区
+                    $mainurlopen = true;
+                }else{
+                    if (strstr($areastr, ',88888888,')) {
+                        $mainurlopen = true;
+                    }
+                }
+            }
 
+            if ($mainurlopen && $con['mainurl']) {
+                $con['url'] = $this->getYsContentUrl($con);
+            }else{
+                $con['url'] = $this->getContentUrl($con, '', $area);
+                $con['title'] = $misarea ? $area['stitle'].$con['title'] : $con['title'];
+            }
         
-		$con['url'] = $this->getContentUrl($con, '', $area);
 
+        }else{
+            $con['url'] = $this->getContentUrl($con, '', $area);
+        }
         return $con;
     }
 
@@ -172,4 +191,32 @@ class ContentModel extends Model
 	    $url = config('sys.site_protocol')."://".$url;
 	    return $url;
 	}
+
+    public function getYsContentUrl($con, $cw = '') {
+        $url = '';
+        //如果是跳转，直接就返回跳转网址
+        if (!empty($con['jumpurl'])) {
+            return $con['jumpurl'];
+        }
+        $cate = db('category')->where(['id'=>$con['cid']])->find();
+        $cname = $cate['etitle'] ? $cate['etitle'] : $cate['id'];
+
+        switch (config('sys.url_model')) {
+            case '1'://动态
+                $cw = $cw !== '' ? "&cw=".$cw : $cw;
+                $url = "/index.php/index/show/index?id=".$con['id'].$cw;
+                $url = config('sys.site_url').$url;
+                break;
+            case '2'://静态
+                # code...
+                break;
+            case '3'://伪静态
+                $cw = $cw !== '' ? "_".$cw : $cw;
+                $url = $con['etitle'] ? $con['etitle'].$cw : $con['id'].$cw;
+                $url = config('sys.site_url')."/".$cname."/".$url.".".config('url_html_suffix');
+                break;
+        }
+        $url = config('sys.site_protocol')."://".$url;
+        return $url;
+    }
 }

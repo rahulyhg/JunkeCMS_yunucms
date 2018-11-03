@@ -211,6 +211,13 @@
 						        </div>
 
 						        <div class="layui-form-item">
+						            <label class="layui-form-label">链接同步主站</label>
+						           	<div class="layui-input-inline">
+						                <input type="checkbox" name="mainurl" lay-skin="switch" lay-filter="switchTest">
+						            </div>
+						        </div>
+
+						        <div class="layui-form-item">
 						            <label class="layui-form-label">头条</label>
 						           	<div class="layui-input-inline">
 						                <select name="top" id="top">
@@ -275,7 +282,7 @@
         'paragraph', 'fontfamily', 'fontsize', '|',
         'indent', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|',
         'link', 'unlink',
-    ]]};
+    ]],initialFrameHeight:100};
     window.UEDITOR_HOME_URL = '__UEDITOR__/';
     window.onload = function() {
         window.UEDITOR_CONFIG.initialFrameWidth=700;

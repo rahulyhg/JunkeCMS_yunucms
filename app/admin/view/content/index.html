@@ -99,9 +99,12 @@
                         <li><a class="do-action" data-type="doDelete" data-href="{:url('delcontent')}">删除</a></li>
                         <li><a class="do-action" data-type="doState" data-href="{:url('stateall',['istop'=>1])}">推荐</a></li>
                         <li><a class="do-action" data-type="doState" data-href="{:url('stateall',['istop'=>0])}">取消推荐</a></li>
+                        <li><a class="do-action" data-type="doState" data-href="{:url('mainurl',['mainurl'=>1])}">链接同步主站</a></li>
+                        <li><a class="do-action" data-type="doState" data-href="{:url('mainurl',['mainurl'=>0])}">取消同步主站</a></li>
                         <li class="divider"></li>
                         {if config('sys.api_bdts') eq 1}<li><a class="do-action" data-type="doState" data-href="{:url('baidu')}">百度推送</a></li>{/if}
                         {if config('sys.api_bdxzh') eq 1}<li><a class="do-action" data-type="doState" data-href="{:url('xzh')}">熊掌号推送</a></li>{/if}
+                        {if config('sys.api_media') eq 1}<li><a class="do-action media">媒体联盟推送</a></li>{/if}
                     </ul>
                 </div>
 				
@@ -275,6 +278,52 @@
             }
         });
         diqu(layer, form, box);
+
+        $('.media').on('click', function(){
+            if (1 > $(".layuitable .article_list input:checked").size()){
+                layer.alert("对不起，请选中您要操作的记录！", { title: "提示", icon: 2, time: 5000, resize: false, zIndex: layer.zIndex });
+            }else{
+                var diqulay = layer.confirm('此操作不可逆，请再次确认是否要操作',{
+                    title: '确认更新这些信息',
+                    btnAlign: 'c',
+                    resize: false,
+                    icon: 3,
+                    btn: ['确定操作', '我再想想'],
+                    yes: function(index, layero){
+                        parent.layer.alert("数据正在推送中...请耐心等待...", {
+                            title: "提示", icon: 1, resize: false, zIndex: layer.zIndex
+                        });
+                        layer.close(diqulay);
+                        var value = $("input:checkbox[name='diqu[]']:checked").map(function(index, el) {
+                            return $(el).val();
+                        }).get().join(',');
+                        for (var c = "", d = $(".layuitable .article_list input:checked"), e = 0; e < d.length; e++) d[e].checked && "disabled" != $(d[e]).attr("disabled") && (c += $(d[e]).attr("ids") + ",");
+                        $.ajax({
+                            url: '{:url("media")}',
+                            dataType: "json",
+                            data:{'ids':c, aid:value},
+                            type: "POST",
+                            success: function(data){
+                                if (data.code == 1) {
+                                    parent.layer.alert(data.msg, {
+                                        title: "提示", icon: 1, resize: false, zIndex: layer.zIndex
+                                    }, function () {
+                                        location.href = location.href;
+                                    });
+                                }
+                                else {
+                                    parent.layer.alert(data.msg, {
+                                        title: "提示", icon: 2, resize: false, zIndex: layer.zIndex
+                                    }, function () {
+                                        location.href = location.href;
+                                    });
+                                }
+                            }
+                        }); 
+                    }
+                });
+            }
+        });
     });
 
     //移动分类
@@ -307,28 +356,28 @@
     });
     
     $(document).on('click','.change_status', function () {
-            var id=$(this).attr('data-id');
-            var obs=$(this);
-            $.ajax({
-                url: '{:url("statecontent")}',
-                dataType: "json",
-                data:{'id':id},
-                type: "POST",
-                success: function(data){
-                    if(data.code == 1){
-                        obs.find('div').removeClass('layui-form-onswitch');
-                        layer.msg(data.msg,{icon:2,time:1500,shade: 0.1,});
-                    }else{
-                        obs.find('div').addClass('layui-form-onswitch');
-                        layer.msg(data.msg,{icon:1,time:1500,shade: 0.1,});
-                    }
-                },
-                error:function(ajaxobj)
-                {
-                    if(ajaxobj.responseText!='')
-                        alert(ajaxobj.responseText);
+        var id=$(this).attr('data-id');
+        var obs=$(this);
+        $.ajax({
+            url: '{:url("statecontent")}',
+            dataType: "json",
+            data:{'id':id},
+            type: "POST",
+            success: function(data){
+                if(data.code == 1){
+                    obs.find('div').removeClass('layui-form-onswitch');
+                    layer.msg(data.msg,{icon:2,time:1500,shade: 0.1,});
+                }else{
+                    obs.find('div').addClass('layui-form-onswitch');
+                    layer.msg(data.msg,{icon:1,time:1500,shade: 0.1,});
                 }
-            });
+            },
+            error:function(ajaxobj)
+            {
+                if(ajaxobj.responseText!='')
+                    alert(ajaxobj.responseText);
+            }
+        });
     });
     
     $(document).on('click','.icon-search', function () {

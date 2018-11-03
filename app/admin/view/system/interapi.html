@@ -16,7 +16,7 @@
 					</div>
 					<div class="layui-form-item">
 			            <label class="layui-form-label">是否开启</label>
-			            <div class="layui-input-inline">
+			            <div class="layui-input-inline w100">
 			                <input type="checkbox" {if config('sys.api_bdts') eq 1}checked{/if} name="api_bdts" lay-skin="switch" lay-filter="api_bdts">
 			            </div>
 			        </div>
@@ -39,7 +39,7 @@
 					</div>
 					<div class="layui-form-item">
 			            <label class="layui-form-label">是否开启</label>
-			            <div class="layui-input-inline">
+			            <div class="layui-input-inline w100">
 			                <input type="checkbox" {if config('sys.api_bdxzh') eq 1}checked{/if} name="api_bdxzh" lay-skin="switch" lay-filter="api_bdxzh">
 			            </div>
 			        </div>
@@ -74,7 +74,7 @@
 
 					<div class="layui-form-item">
 			            <label class="layui-form-label">是否开启</label>
-			            <div class="layui-input-inline">
+			            <div class="layui-input-inline w100">
 			                <input type="checkbox" {if config('sys.api_bdqc') eq 1}checked{/if} name="api_bdqc" id="api_bdqc" lay-skin="switch" lay-filter="api_bdqc">
 			            </div>
 			        </div>
@@ -112,7 +112,7 @@
 
 					<div class="layui-form-item">
 			            <label class="layui-form-label">是否开启</label>
-			            <div class="layui-input-inline">
+			            <div class="layui-input-inline w100">
 			                <input type="checkbox" id="api_wyc" {if config('sys.api_wyc') eq 1}checked{/if} name="api_wyc" lay-skin="switch" lay-filter="api_wyc">
 			            </div>
 			            <div class="layui-input-inline"><font class="font_tip">开启伪原创前需先设置好百度切词接口 <a href="http://www.yunucms.com/article/show/id/85.html" target="_blank" style="text-decoration:underline;">[ 使用说明 ]</a></font></div>
@@ -156,7 +156,7 @@
 
 					<div class="layui-form-item">
 			            <label class="layui-form-label">是否开启</label>
-			            <div class="layui-input-inline">
+			            <div class="layui-input-inline w100">
 			                <input type="checkbox" {if config('sys.api_xxts') eq 1}checked{/if} name="api_xxts" lay-skin="switch" lay-filter="api_xxts">
 			            </div>
 			        </div>
@@ -167,10 +167,29 @@
 
 					<div class="layui-form-item">
 			            <label class="layui-form-label">是否开启</label>
-			            <div class="layui-input-inline">
+			            <div class="layui-input-inline w100">
 			                <input type="checkbox" {if config('sys.api_pmjkhq') eq 1}checked{/if} id="api_pmjkhq" name="api_pmjkhq" lay-skin="switch" lay-filter="api_pmjkhq">
 			            </div>
 			            <div class="layui-input-inline"><font class="font_tip">开启排名监控获取前需先在平台添加排名监控查询 </font></div>
+			        </div>
+
+			        <div class="title_bar mb20">
+						媒体联盟API
+					</div>
+					
+					<div class="layui-form-item api_wyc ">
+			            <label class="layui-form-label">apikey</label>
+			            <div class="layui-input-inline">
+			                <input class="layui-input w450" type="text" id="api_mediaapikey" name="api_mediaapikey" value="{:config('sys.api_mediaapikey')}">
+			            </div>
+			        </div>
+
+					<div class="layui-form-item">
+			            <label class="layui-form-label">是否开启</label>
+			            <div class="layui-input-inline w100">
+			                <input type="checkbox" {if config('sys.api_media') eq 1}checked{/if} id="api_media" name="api_media" lay-skin="switch" lay-filter="api_media">
+			            </div>
+			            <div class="layui-input-inline w450"><font class="font_tip">开启媒体联盟前需先在平台购买相关服务，并填写授权域名:apikey </font></div>
 			        </div>
 
 					<div class="layui-form-item">
@@ -269,12 +288,41 @@ layui.use(['form','common'], function(){
                     type: 'post',
                     dataType: 'json',
                     data: {},
-                     success: function (info) {
+                    success: function (info) {
                      	info = JSON.parse(info);
                         if (info.state == 1) {
+
                         }else{
                         	common.layerAlertE('平台未添加主词排名监控', '提示');
                             $("#api_pmjkhq").removeAttr('checked');
+							form.render();
+                        }
+                    }
+                });			
+        	}
+        });
+
+        form.on('switch(api_media)', function(data) {
+        	if (this.checked) {
+        		if (!$("#api_mediaapikey").val()) {
+		        	common.layerAlertE('开启媒体联盟，请先填写apikey', '提示');
+		        	$("#api_media").removeAttr('checked');
+					form.render();
+					return;		
+		        }
+
+        		$.ajax({
+                    url: '{:url('checkMedia')}',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {'apikey':$("#api_mediaapikey").val()},
+                    success: function (info) {
+                     	info = JSON.parse(info);
+                        if (info && info.state == 1) {
+
+                        }else{
+                        	common.layerAlertE('授权用户未在平台上购买媒体联盟服务', '提示');
+                            $("#api_media").removeAttr('checked');
 							form.render();
                         }
                     },

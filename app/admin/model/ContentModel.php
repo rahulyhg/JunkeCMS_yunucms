@@ -64,6 +64,7 @@ class ContentModel extends Model
                 }
             }
             $param['istop'] = array_key_exists("istop", $param) ? 1 : 0;
+            $param['mainurl'] = array_key_exists("mainurl", $param) ? 1 : 0;
             if (array_key_exists("area", $param)) {
                 $param['area'] = $param['area'] ? ','.$param['area'].',' : '';
             }
@@ -94,6 +95,7 @@ class ContentModel extends Model
                 }
             }
             $param['istop'] = array_key_exists("istop", $param) ? 1 : 0;
+            $param['mainurl'] = array_key_exists("mainurl", $param) ? 1 : 0;
             if (array_key_exists("area", $param)) {
                 $param['area'] = $param['area'] ? ','.$param['area'].',' : '';
             }
