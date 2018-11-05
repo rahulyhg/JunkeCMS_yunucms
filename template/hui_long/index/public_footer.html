@@ -7,18 +7,20 @@
                         <h2>Online booking</h2>
                         <h3>在线预约</h3>
                     </div>
-                    <form method="post" class="form-horizontal js-ajax-form" action="/plugin/diyform/index/submitform.html">
-                        <input type="hidden" name="formid" value="1">
+                    <form form id="myform1" method="post" action="<yunu:url name='form'>">
+                        <input type="hidden" name="__token__" value="{$Request.token}" >
+                        <input type="hidden" name="__formid__" value="1" >
+                        <input type="hidden" name="__returntype__" value="default" >
                         <div class="form-input wow animated fadeInUp" data-wow-delay="0.3s" data-wow-offset="50">
-                            <input type='text' name='addfields[1]' id='name' value='' class="form-control" required="required" errmsg="请输入姓名！|姓名长度必须在1-15个字符之间！" placeholder="您的尊称 Name" />
+                            <input type='text' name=name' id='name' value='' class="form-control" required="required" errmsg="请输入姓名！|姓名长度必须在1-15个字符之间！" placeholder="您的尊称 Name" />
                             <i class="far form-icon fa-user" aria-hidden="true"></i>
                         </div>
                         <div class="form-input wow animated fadeInUp" data-wow-delay="0.6s" data-wow-offset="50">
-                            <input type='text' name='addfields[2]' id='phone' value='' class="form-control" required="required" errmsg="请输入手机号码！|手机号码格式有误！|手机号码长度必须为11个字符！" placeholder="您的电话 Phone" />
+                            <input type='text' name='phone' id='phone' value='' class="form-control" required="required" errmsg="请输入手机号码！|手机号码格式有误！|手机号码长度必须为11个字符！" placeholder="您的电话 Phone" />
                             <i class="fas form-icon fa-mobile-alt" aria-hidden="true"></i>
                         </div>
                         <div class="form-input wow animated fadeInUp" data-wow-delay="0.9s" data-wow-offset="50">
-                            <textarea name='addfields[3]' id='content' rows='4' class="form-control" required="required" errmsg="请填写留言内容！" placeholder="您的留言 Message"></textarea>
+                            <textarea name='yuanwang' id='content' rows='4' class="form-control" required="required" errmsg="请填写留言内容！" placeholder="您的留言 Message"></textarea>
                             <i class="far form-icon fa-comment-alt" aria-hidden="true"></i>
                         </div>
 
@@ -58,9 +60,11 @@
                             <h2>Search</h2>
                             <h3>站内搜索</h3>
                         </div>
-                      <div id="baidu_search" class="wow fadeInUp"  data-wow-delay="0.5s" data-wow-offset="50">
-                          <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6374714592747747015' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>
-                      </div>
+                        <form target="_blank" action="http://so.hl-js.com/cse/site" class="wow fadeInUp"  data-wow-delay="0.5s" data-wow-offset="50">
+                            <input type="text" placeholder="输入你要搜索的内容" name="q" size="30">
+                            <input type="hidden" name="cc" value="hl-js.com">
+                            <input class="submit" type="submit" value="">
+                        </form>
                     </div>
                     <div class="bottom">
                         <div class="footer-title wow fadeInUp" data-wow-delay="2.1s" data-wow-offset="50">
