@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="<yunu:config name='seo_keywords'/>">
+  <meta name="description" content="<yunu:config name='seo_description'/>">
+  <title>{$content.title} - {$category.title} - <yunu:config name="site_title"></title>
+  <include file="header:style"/>
+</head>
+<body>
+<!--内容页banner部分  begin-->
+<section class="pBanner pBanner2">
+  <include file="public:header"/>
+  <div class="pBanner_con layui-container"> {$category.content}</div>
+</section>
+<!--内容页banner部分 end-->
+<!--内容页导航区域 begin-->
+<section class="pages_nav">
+  <ul class="pagesNavUl layui-container animated fadeInUp wow">
+    <yunu:catlist cid="$category['id']" type="parent" limit="20" flag="0">
+      <li <if condition="$catlist['id'] eq $cid || $catlist['id'] eq $category['pid']">class="active"</if>>
+      <a href="{$catlist.url}">{$catlist.title}</a>
+      </li>
+    </yunu:catlist>
+  </ul>
+</section>
+<!--内容页导航区域 end-->
+<!--内容页内容区域 begin-->
+<section class="prodcutCon sbc-padding-2vw">
+  <section class="pageCon layui-container">
+    <h2 class="pageCon_title animated fadeInUp wow" data-wow-delay="0.3s">{$content.title}</h2>
+    <p class="pageCon_dec wow animated fadeInUp" data-wow-delay="0.6s">
+      <span>发布时间：{$content.create_time|date='Y-m-d',###}</span>
+      <span>{$content.click} 次浏览</span>
+    </p>
+    <div class="wow animated fadeInUp" data-wow-delay="1s">{$content.content|sitelink}</div>
+    <p class="paperCon_p1 animated fadeInUp wow" data-wow-delay="0.5s">更多定制产品，请<a href="http://www.hl-js.com/contact">联系我们</a>。</p>
+    <p class="paperCon_p1 animated fadeInUp wow" data-wow-delay="0.5s">1688：<a href="https://jinghui1.1688.com/">https://jinghui1.1688.com/</a></p>
+    <p class="pageCon_author animated fadeInUp wow" data-wow-delay="0.5s" data-wow-offset="50">文章编辑：辉龙编辑</p>
+    <hr>
+    <!--内容页前后一页部分 begin-->
+    <section class="pageCon_flip animated fadeInUp wow" data-wow-delay="0.5s">
+      <div class="layui-row">
+        <section class="flip_prev layui-col-xs6 layui-col-sm6 layui-col-md6 layui-col-lg6"><i class="fas flip_icon fa-chevron-left"></i>{$content.prev}</section>
+        <section class="flip_next sbc-text-right layui-col-xs6 layui-col-sm6 layui-col-md6 layui-col-lg6">{$content.next}<i class="fas flip_icon fa-chevron-right"></i></section>
+      </div>
+    </section>
+	<!--内容页前后一页部分 end-->
+  </section>
+  <section class="picList layui-container">
+    <div class="title">
+      <h2 class="animated fadeInUp wow" data-wow-delay="0.5s">Related</h2>
+      <h3 class="animated fadeInUp wow" data-wow-delay="0.5s">相关内容</h3>
+    </div>
+    <div class="layui-row"><?php $num=1;?>
+      <yunu:list cid="$cid" titlelen="20" orderby="create_time desc" limit="6">
+        <div class="picListBox layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4 animated fadeInUp wow" data-wow-offset="100">
+          <div class="shar">
+            <a href="{$list.url}" title="{$list.title} - {$category.title} - <yunu:config name="site_title">" target="_blank">
+            <div class="pic">
+              <img src="{$list.pic}" alt="{$list.title} - {$category.title} - <yunu:config name="site_title">" title="{$list.title} - {$category.title} - <yunu:config name="site_title">"/>
+              <div class="mark">
+                <div class="markTxt">{$list.content|str2sub=130, true}</div>
+              </div>
+              <div class="Licon">{$num}</div>
+              <div class="Ricon">+</div>
+            </div>
+            <div class="Ptitle">
+              <p class="zhTitle">{$list.title}</p>
+              <p class="enTitle">{$list.ftitle}</p>
+            </div>
+            </a>
+          </div>
+        </div><?php $num++;?>
+      </yunu:list>
+    </div>
+  </section>
+ </section>
+<!--内容页内容区域 end-->
+<include file="public:footer" />
+</body>
+</html>

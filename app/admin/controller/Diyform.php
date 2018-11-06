@@ -618,7 +618,7 @@ class Diyform extends Common
             $mail->Password = $param['mail_password'];     // SMTP服务器密码
             $mail->SetFrom($param['mail_username'], $param['mail_setname']);
 
-            $mail->Subject = "云优CMS_测试邮件";
+            $mail->Subject = "君科CMS_测试邮件";
             $mail->MsgHTML("当您看到此封邮件时，说明邮件提醒配置参数已经配置成功，感谢您的使用！");
             $mail->AddAddress($param['mail_demo'], '');
             $jg =  $mail->Send() ? true : $mail->ErrorInfo;

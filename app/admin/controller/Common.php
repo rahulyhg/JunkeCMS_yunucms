@@ -81,9 +81,9 @@ class Common extends Controller{
             ]);
         }
         $this->assign([
-            'copy_sysname' => config('sys.copy_sysname') ? config('sys.copy_sysname') : '云优CMS',
-            'copy_name' => config('sys.copy_name') ? config('sys.copy_name') : 'YUNUCMS',
-            'copy_url' => config('sys.copy_url') ? config('sys.copy_url') : 'www.yunucms.com',
+            'copy_sysname' => config('sys.copy_sysname') ? config('sys.copy_sysname') : '君科CMS',
+            'copy_name' => config('sys.copy_name') ? config('sys.copy_name') : 'JunkeCMS',
+            'copy_url' => config('sys.copy_url') ? config('sys.copy_url') : 'www.junke158.com',
         ]);
 
         foreach (config('sys') as $k => $v) {

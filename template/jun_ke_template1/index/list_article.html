@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="<yunu:config name='seo_keywords'/>">
+    <meta name="description" content="<yunu:config name='seo_description'/>">
+    <title>{$category.title} - <yunu:config name="site_title"></title>
+    <include file="header:style"/>
+</head>
+<body>
+<!--内页banner部分  begin-->
+<section class="pBanner pBanner1">
+    <include file="public:header"/>
+    <div class="pBanner_con layui-container">
+        <h2>{$type.subtitle}</h2>
+        <h3>{$type.title}</h3>
+    </div>
+</section>
+<!--内页banner部分 end-->
+<!--列表页导航区域 begin-->
+<section class="pages_nav">
+    <ul class="pagesNavUl layui-container animated fadeInUp wow">
+        <yunu:catlist cid="$category['id']" type="parent" limit="20" flag="0">
+            <li <if condition="$catlist['id'] eq $cid || $catlist['id'] eq $category['pid']">class="active"</if>>
+                <a href="{$catlist.url}">{$catlist.title}</a>
+            </li>
+        </yunu:catlist>
+    </ul>
+</section>
+<!--列表页导航区域 end-->
+<!--列表页内容区域 begin-->
+<section class="NewsList layui-container">
+    <ul class="NewsList_ul">
+        <yunu:list cid="$cid" titlelen="20" orderby="create_time desc"  pagesize="5">
+        <li class="animated fadeInUp wow" data-wow-offset="50">
+            <a class="layui-row layui-col-space30" href="{$list.url}" title="{$list.title} - {$category.title} - <yunu:config name="site_title">" target="_blank">
+                <div class="layui-col-xs3 layui-col-sm3 layui-col-md3 layui-col-lg3">
+                    <div class="NlistPic">
+                        <img src="{$list.pic}" alt="{$list.title} - {$category.title} - <yunu:config name="site_title">"  title="{$list.title} - {$category.title} - <yunu:config name="site_title">"/>
+                    </div>
+                </div>
+                <div class="NlistCon layui-col-xs9 layui-col-sm9 layui-col-md9 layui-col-lg9">
+                    <div class="Nlist_Top layui-clear">
+                        <h2 class="Nlist_title">{$list.title}</h2>
+                        <div class="Nlist_time">{$list.create_time|date='Y-m-d',###}</div>
+                    </div>
+                    <div class="Nlist_Bottom  layui-clear">
+                        <div class="Nlist_dec">{$list.content|str2sub=130, true}</div>
+                        <div class="Nlist_Right text-right">&rarr;</div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        </yunu:list>
+    </ul>
+    <div class="Flip animated fadeInUp wow" data-wow-offset="50">{$page}</div>
+</section>
+<!--列表页内容区域 end-->
+<!--底部信息部分 begin--><include file="public:footer" /><!--底部信息部分 end-->
+</body>
+</html>

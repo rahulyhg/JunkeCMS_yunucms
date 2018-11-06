@@ -1,0 +1,123 @@
+<footer>
+    <section class="footer1">
+        <div class="footer-content layui-container">
+            <div class="layui-row layui-col-space30">
+                <div class="footer-box footer-box1 layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4">
+                    <div class="footer-title wow animated fadeInUp" data-wow-offset="50">
+                        <h2>Online booking</h2>
+                        <h3>在线预约</h3>
+                    </div>
+                    <form form id="myform1" method="post" action="<yunu:url name='form'>">
+                        <input type="hidden" name="__token__" value="{$Request.token}" >
+                        <input type="hidden" name="__formid__" value="1" >
+                        <input type="hidden" name="__returntype__" value="default" >
+                        <div class="form-input wow animated fadeInUp" data-wow-delay="0.3s" data-wow-offset="50">
+                            <input type='text' name=name' id='name' value='' class="form-control" required="required" errmsg="请输入姓名！|姓名长度必须在1-15个字符之间！" placeholder="您的尊称 Name" />
+                            <i class="far form-icon fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="form-input wow animated fadeInUp" data-wow-delay="0.6s" data-wow-offset="50">
+                            <input type='text' name='phone' id='phone' value='' class="form-control" required="required" errmsg="请输入手机号码！|手机号码格式有误！|手机号码长度必须为11个字符！" placeholder="您的电话 Phone" />
+                            <i class="fas form-icon fa-mobile-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="form-input wow animated fadeInUp" data-wow-delay="0.9s" data-wow-offset="50">
+                            <textarea name='yuanwang' id='content' rows='4' class="form-control" required="required" errmsg="请填写留言内容！" placeholder="您的留言 Message"></textarea>
+                            <i class="far form-icon fa-comment-alt" aria-hidden="true"></i>
+                        </div>
+
+                        <input type="submit" name="submit" value="提交 Submit"
+                                class="js-ajax-submit coolbg wow animated fadeInUp" data-wow-delay="1.2s" data-wow-offset="50" />
+                    </form>
+                </div>
+                <div class="footer-box footer-box2 layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4">
+                    <h2 class="title wow animated fadeInUp" data-wow-delay="0.4s" data-wow-offset="50">Contact us</h2>
+                    <p class="ftel wow animated fadeInUp" data-wow-delay="0.7s" data-wow-offset="50">固定电话：<yunu:block name='contact_tell' /></p>
+                    <p class="femail wow animated fadeInUp" data-wow-delay="1s" data-wow-offset="50">
+                        <a href="mailto:<yunu:block name='contact_mail' />"><yunu:block name='contact_mail' /></a>
+                    </p>
+                    <p class="fadd wow animated fadeInUp" data-wow-delay="1.3s" data-wow-offset="50">公司地址：<yunu:block name='contact_address' /></p>
+                    <p class="ffax wow animated fadeInUp" data-wow-delay="1.6s" data-wow-offset="50">传真号码：<yunu:block name='contact_fax' /></p>
+                    <p class="fico">
+                        <a class="icon fab fa-qq wow animated fadeInUp" href="tencent://Message/?Uin=418156612&Menu=yes" data-wow-delay="1.9s" data-wow-offset="50" title="418156612"></a>
+                        <a class="icon fab fa-weixin wow animated fadeInUp" data-wow-delay="2s" data-wow-offset="50">
+                            <img src="__PUBLIC__/img/other/gongzhonghao.jpg" alt="">
+                       </a>
+                        <a class="icon wow animated fadeInUp tips" data-wow-delay="2.1s" data-wow-offset="50" aria-hidden="true" title="阿里巴巴" href="https://jinghui1.1688.com">1688</a>
+                        <a class="far icon fa-envelope wow animated fadeInUp tips" data-wow-delay="2.2s" data-wow-offset="50" aria-hidden="true" title="Email" href="mailto:<yunu:block name='contact_mail' />"></a>
+                    </p>
+                    <p class="wow animated fadeInUp" data-wow-delay="2.5s" data-wow-offset="50">
+                    <span class="footer-sign">
+                     <a id="jsl_speed_stat0" href="http://www.yunaq.com/#zid=5b9c656445475e706fecf5a6"
+                             target="_blank">知道创宇云安全</a><script src="//static.yunaq.com/static/js/stat/picture_stat.js" charset="utf-8" type="text/javascript"></script>
+                    </span>
+                    <span class="footer-sign">`
+                        <script id="jsgovicon" src="http://odr.jsdsgsxt.gov.cn:8081/mbm/app/main/electronic/js/govicon.js?siteId=37dff4c2c2304922b12e6b661d9e8fa7&width=100&height=137&type=1" type="text/javascript" charset="utf-8"></script>
+                    </span>
+                    </p>
+                </div>
+                <div class="footer-box footer-box3 layui-col-xs4 layui-col-sm4 layui-col-md4 layui-col-lg4">
+                    <div class="top">
+                        <div class="footer-title wow fadeInUp" data-wow-delay="0.5s" data-wow-offset="50">
+                            <h2>Search</h2>
+                            <h3>站内搜索</h3>
+                        </div>
+                        <form target="_blank" action="http://so.hl-js.com/cse/site" class="wow fadeInUp"  data-wow-delay="0.5s" data-wow-offset="50">
+                            <input type="text" placeholder="输入你要搜索的内容" name="q" size="30">
+                            <input type="hidden" name="cc" value="hl-js.com">
+                            <input class="submit" type="submit" value="">
+                        </form>
+                    </div>
+                    <div class="bottom">
+                        <div class="footer-title wow fadeInUp" data-wow-delay="2.1s" data-wow-offset="50">
+                            <h2>Quick Entry</h2>
+                            <h3>快捷入口</h3>
+                        </div>
+                        <ul class="content clearfix">
+                            <li class="wow fadeInUp" data-wow-delay="2.4s" data-wow-offset="50">
+                                <a href="/about">关于我们</a>
+                                |
+                            </li>
+                            <li class="wow fadeInUp" data-wow-delay="2.5s" data-wow-offset="50">
+                                <a href="/news">新闻资讯</a>
+                                |
+                            </li>
+                            <li class="wow fadeInUp" data-wow-delay="2.6s" data-wow-offset="50">
+                                <a href="/product">产品展示</a>
+                                |
+                            </li>
+                            <li class="wow fadeInUp" data-wow-delay="2.7s" data-wow-offset="50">
+                                <a href="/application">市场应用</a>
+                            </li>
+                            <li class="wow fadeInUp" data-wow-delay="2.8s" data-wow-offset="50">
+                                <a href="/contact">联系我们</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer2">
+        <div class="layui-container"><yunu:config name="site_copyright"/></div>
+    </section>
+</footer>
+<script src="//code.sunbingchen.cn/layui/layui.all.js"></script>
+<script src="//code.sunbingchen.cn/swiper/js/swiper.min.js"></script>
+<script src="//code.sunbingchen.cn/superslide/jquery.superslide.js"></script>
+<script src="https://cdn.bootcss.com/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="__PUBLIC__/js/toast.js"></script>
+<script src="__PUBLIC__/js/moveline.js"></script>
+<script src="__PUBLIC__/js/main-down.js"></script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>

@@ -42,7 +42,7 @@
                     <div class="layui-form-label" style="width:500px; text-align:left;">
                         {if condition="config('cloud.grant')"}
                         <span class="mcolor">已认证 {:config('yunucms.grant')}</span>
-                        <!--<a href="javascript:void(0);" class="mcolor copyright">&nbsp;&nbsp;[ 更改后台版权 ]</a>-->
+                        <a href="javascript:void(0);" class="mcolor copyright">&nbsp;&nbsp;[ 更改后台版权 ]</a>
                         {else /}
                         <span class="mcolor2">未认证 (官网授权后，需重新绑定云平台帐号)</span>
                         {/if}
@@ -117,7 +117,7 @@
                 <input type="text" class="layui-input" style="width:200px;" name="copy_url" lay-verify="required" autocomplete="off" value="{:config('sys.copy_url')}" placeholder="请输入官网地址">
             </div>
         </div>
-        <div class="layui-form-item"><font class="mcolor"> * 如果设置项为空，默认显示云优版权</font></div>
+        <div class="layui-form-item"><font class="mcolor"> * 如果设置项为空，默认显示君科版权</font></div>
         <div class="layui-form-item" id="resultTips"></div>
     </form>
 </script>

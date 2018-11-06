@@ -1,0 +1,24 @@
+<?php error_reporting(0); ?>
+<header id="header">
+    <section class="layui-container headerWarpper">
+        <div class="tLogo">
+            <h1><img src="<yunu:config name='site_logo'/>" title="<yunu:config name="seo_title"/> " alt="<yunu:config name="seo_title"/>"></h1>
+        </div>
+        <ul class="main-menu">
+            <?php $cid = isset($cid) ? $cid : 0;  ?>
+            <li><a href="http://www.hl-js.com" >网站首页</a></li>
+            <yunu:nav typeid="1" limit="20">
+                <li>
+                    <a href="{$nav.url}" <if condition="in_array($nav['id'],[20,30])">rel="nofollow"</if>
+                    target="{$nav.target}">{$nav.title}</a>
+                    <dl> <volist name="nav['child']" id="v">
+                         <dd><a href="{$v.url}" target="{$nav.target}">{$v.title}</a></dd>
+                    </volist></dl>
+                </li>
+            </yunu:nav>
+        </ul>
+        <div class="language">
+            <a href="http://www.hl-js.com/">中文</a> &nbsp;| &nbsp; <a href="http://en.hl-js.com/">ENGLISH</a>
+        </div>
+    </section>
+</header>
