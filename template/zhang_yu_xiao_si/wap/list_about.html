@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="keywords" content="<yunu:config name='seo_keywords'/>">
     <meta name="description" content="<yunu:config name='seo_description'/>">
-    <title>{$content.title}-<yunu:config name="site_title"/></title>
+    <title>{$category.title}-<yunu:config name="site_title"/></title>
     <link rel="stylesheet" type="text/css" href="https://mipcache.bdstatic.com/static/v2/mip.css">
     <link rel="canonical" href="<yunu:config name='wapurl'/>">
     <style mip-custom>
@@ -42,41 +42,20 @@
         .mip-foot-nav a:first-child{border-left:none}
         .mip-foot-nav a .mip-layout-container{width:29px;height:19px;display:block;margin:5px auto}
         .mip-foot-nav a span{font-size:13px;color:#fff}
-        .mip-content h3{margin: 2vw 3vw;font-size: 4vw;line-height: 1;}
-        .mip-content p{margin: 2vw 3vw;font-size: 3.4vw;line-height: 1.2;}
-        .mip-content .mip-layout-container,  .mip-content img {max-width: 90%;height:auto!important;display: block;margin: auto;}
-        .mip-content table{width:95%!important;}
-        .mip-show-tit h3 {text-align: center;font-size: 5vw;color: #fd79a8;margin-bottom: 1vw;margin-top: 2vw;}
-        .mip-show-tit p {text-align: center;}
-        .mip-show-tit p span {display: inline-block;margin: 0 2vw;font-size: 3.5vw;line-height: 1.4;color: #666;}
-        .mip-prve { margin: 1vw 3vw 6vw;}
-        .mip-prve p, .mip-prve p a {font-size: 3.4vw;line-height: 2.4;color: #666;}
+        .mip-content p{margin: 2vw 3vw;font-size: 3.4vw;line-height: 1.8;}
     </style>
     <noscript>
         <style mip-officialrelease>
-            body {-webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none}
+        body {-webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none}
         </style>
     </noscript>
 </head>
-
 <body>
-<include file="public:header" />
-<div class="mip-show-tit">
-    <h3>{$content.title}</h3>
-    <p>
-        <span>浏览量：{$content.click}</span>
-        <span>发布时间：{$content.update_time|date='Y-m-d',###}</span>
-    </p>
-</div>
-<div class="mip-content">
-    <div class="mip-text">
-        {$content.content|sitelink}
+    <include file="public:header" />
+    <div class="mip-content">
+        <div class="mip-text">
+            {$category.content}
+        </div>
     </div>
-</div>
-<div class="mip-prve">
-    <p>上一篇： {$content.prev}</p>
-    <p>下一篇： {$content.next}</p>
-</div>
-<div class="mip-clearfix"></div>
-<include file="public:footer" />
+    <include file="public:footer" />
 </html>
