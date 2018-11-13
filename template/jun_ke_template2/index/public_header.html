@@ -1,27 +1,22 @@
 <?php error_reporting(0); ?>
 <header id="header">
-    <section class="headerTop">
-        <div class="layui-container sbc-space-between">
-            <div class="left">
-                <a href="https://twitter.com/Amber82619235"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/%E8%8C%B5-%E6%B2%88-937b56160/"><i class="fab fa-linkedin-in"></i></a>
-                <a href=""><i class="fab fa-facebook-f"></i></a>
-                <a href=""><i class="fab fa-skype"></i></a>
+    <div class="layui-container sbc-space-between sbc-padding-1vw">
+        <h1 class="tLogo">
+            <img src="<yunu:config name='site_logo'/>" title="<yunu:config name="seo_title" />" alt="<yunu:config name="seo_title" />" >
+            <div class="logo_dec">
+                <p class="p1">无锡市前洲高压泵厂</p>
+                <p class="p2">17年高压泵专业定制供应商</p>
             </div>
-            <div class="right">
-                <i class="fas fa-mobile-alt"></i>13912452998
+        </h1>
+        <div class="tRight">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-dianhua"></use></svg>
+            <div class="tRight_dec">
+                <p class="p1">全国咨询热线</p>
+                <p class="p2">138-1218-5573</p>
             </div>
         </div>
-    </section>
-    <section class="headerWarpper">
-        <div class="sbc-centered layui-container">
-            <div class="tLogo">
-                <h1><img src="<yunu:config name='site_logo'/>" title="<yunu:config name=" seo_title"/> " alt="
-                    <yunu:config name="seo_title" />
-                    ">
-                </h1>
-            </div>
-            <ul class="main-menu">
+    </div>
+    <ul class="main-menu">
                 <?php $cid = isset($cid) ? $cid : 0;  ?>
                 <li><a href="http://www.hl-js.com">网站首页</a></li>
                 <yunu:nav typeid="1" limit="20">
@@ -37,9 +32,22 @@
                     </li>
                 </yunu:nav>
             </ul>
-            <div class="language">
-                <a href="http://www.hl-js.com/">中文</a> &nbsp;| &nbsp; <a href="http://en.hl-js.com/">ENGLISH</a>
+</header>
+<!--banner部分  begin-->
+<section class="layui-carousel" id="webBanner" style="width:100%;height:100%">
+    <div carousel-item="">
+        <div class="web-banner web-banner-1" title="{$site_info.site_name}">
+            <div class="layui-container">
             </div>
         </div>
-    </section>
-</header>
+        <div class="web-banner web-banner-2" title="{$site_info.site_name}">
+            <div class="layui-container">
+            </div>
+        </div>
+        <div class="web-banner web-banner-3" title="{$site_info.site_name}">
+            <div class="layui-container">
+            </div>
+        </div>
+    </div>
+</section>
+<!--banner部分 end-->
