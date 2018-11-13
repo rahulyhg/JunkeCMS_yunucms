@@ -1,0 +1,45 @@
+<?php error_reporting(0); ?>
+<header id="header">
+    <section class="headerTop">
+        <div class="layui-container sbc-space-between">
+            <div class="left">
+                <a href="https://twitter.com/Amber82619235"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/%E8%8C%B5-%E6%B2%88-937b56160/"><i class="fab fa-linkedin-in"></i></a>
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-skype"></i></a>
+            </div>
+            <div class="right">
+                <i class="fas fa-mobile-alt"></i>13912452998
+            </div>
+        </div>
+    </section>
+    <section class="headerWarpper">
+        <div class="sbc-centered layui-container">
+            <div class="tLogo">
+                <h1><img src="<yunu:config name='site_logo'/>" title="<yunu:config name=" seo_title"/> " alt="
+                    <yunu:config name="seo_title" />
+                    ">
+                </h1>
+            </div>
+            <ul class="main-menu">
+                <?php $cid = isset($cid) ? $cid : 0;  ?>
+                <li><a href="http://www.hl-js.com">网站首页</a></li>
+                <yunu:nav typeid="1" limit="20">
+                    <li>
+                        <a href="{$nav.url}"
+                        <if condition="in_array($nav['id'],[20,30])">rel="nofollow"</if>
+                        target="{$nav.target}">{$nav.title}</a>
+                        <dl>
+                            <volist name="nav['child']" id="v">
+                                <dd><a href="{$v.url}" target="{$nav.target}">{$v.title}</a></dd>
+                            </volist>
+                        </dl>
+                    </li>
+                </yunu:nav>
+            </ul>
+            <div class="language">
+                <a href="http://www.hl-js.com/">中文</a> &nbsp;| &nbsp; <a href="http://en.hl-js.com/">ENGLISH</a>
+            </div>
+        </div>
+    </section>
+</header>

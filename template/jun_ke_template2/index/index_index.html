@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="<yunu:config name='seo_keywords'/>">
+    <meta name="description" content="<yunu:config name='seo_description'/>">
+    <title> <yunu:config name="seo_title"/>-<yunu:config name='seo_keywords'/></title>
+    <include file="header:style"/>
+</head>
+<body>
+<!--首页banner部分  begin-->
+<section class="layui-carousel" id="webBanner" style="width:100%;height:100%">
+    <include file="public:header" index="1"/>
+    <div carousel-item="">
+        <div class="web-banner web-banner-1" title="{$site_info.site_name}">
+            <div class="layui-container">
+            </div>
+        </div>
+        <div class="web-banner web-banner-2" title="{$site_info.site_name}">
+            <div class="layui-container">
+            </div>
+        </div>
+        <div class="web-banner web-banner-3" title="{$site_info.site_name}">
+            <div class="layui-container">
+            </div>
+        </div>
+    </div>
+</section>
+<!--首页banner部分 end-->
+<include file="public:footer"/>
+</body>
+</html>

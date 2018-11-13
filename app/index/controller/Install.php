@@ -174,7 +174,7 @@ class Install extends Controller
 	       	$showstr .= show_msg('安装程序执行完毕！后台默认帐号密码均为：admin');
 
 	        $homeUrl = '//'.$http_host;
-	        $adminUrl = '//'.$http_host.'/yunu.php';
+	        $adminUrl = '//'.$http_host.'/junke_admin.php';
 	        $showstr .=  "<script type=\"text/javascript\">insok(\"{$homeUrl}\",\"{$adminUrl}\")</script>";
 
 	        return $showstr;

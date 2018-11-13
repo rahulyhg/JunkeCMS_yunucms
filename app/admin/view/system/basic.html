@@ -76,7 +76,13 @@
 			                <textarea name="site_copyright" placeholder="版权信息" class="layui-textarea w700">{:config('sys.site_copyright')}</textarea>
 			            </div>
 			        </div>
-
+					<div class="layui-form-item">
+						<label class="layui-form-label">网站模板</label>
+						<div class="layui-input-inline">
+							<input class="layui-input" type="text" name="theme_style"
+									value="{:config('sys.theme_style')}" placeholder="填写使用的网站模板">
+						</div>
+					</div>
 			        <div class="layui-form-item">
 	                    <label class="layui-form-label">后台滑动验证</label>
 	                    <div class="layui-input-inline">
