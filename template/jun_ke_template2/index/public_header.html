@@ -16,19 +16,7 @@
             </div>
         </div>
     </div>
-    <ul class="main-menu sbc-justify-center">
-                <?php $cid = isset($cid) ? $cid : 0;  ?>
-                <li><a href="https://demo2.demo.sunbingchen.cn/">网站首页</a></li>
-                <yunu:nav typeid="1" limit="20">
-                    <li>
-                        <a href="{$nav.url}"<if condition="in_array($nav['id'],[20,30])">rel="nofollow"</if> target="{$nav.target}">{$nav.title}</a>
-                        <dl>
-                            <volist name="nav['child']" id="v">
-                                <dd><a href="{$v.url}" target="{$nav.target}">{$v.title}</a></dd>
-                            </volist>
-                        </dl>
-                    </li>
-                </yunu:nav>
+    <ul class="main-menu sbc-justify-center"><?php $cid = isset($cid) ? $cid : 0;  ?><li><a href="https://demo2.demo.sunbingchen.cn/">网站首页</a></li><yunu:nav typeid="1" limit="20"><li><a href="{$nav.url}"<if condition="in_array($nav['id'],[20,30])">rel="nofollow"</if> target="{$nav.target}">{$nav.title}</a><dl><volist name="nav['child']" id="v"><dd><a href="{$v.url}" target="{$nav.target}">{$v.title}</a></dd></volist></dl></li></yunu:nav>
             </ul>
 </header>
 <!--banner部分  begin-->

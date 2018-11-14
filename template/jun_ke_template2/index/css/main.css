@@ -1,21 +1,10 @@
 html, body{height:100%;}
-html{height:1000px;}
 .layui-container{max-width:1200px;}
 h2{font-size:2vw;line-height:1.4;}
-h3{font-size:1.4vw;line-height:1.4;}
-.web-title{padding:4.6vw 0;text-align:center;color:#3e3a39;}
+h3{font-size:1.2vw;line-height:1.4;}
+.web-title1{padding:4.6vw 0 1vw;text-align:center;color:#ea5420;}
+.web-title1 h3{text-transform:uppercase;}
 .icon{width:1em; height:1em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;}
-.btn-success{display:inline-block;color:#fff;background-color:#f75a53;border-radius:5px;padding:10px 20px 8px 20px;}
-.btn-success:active, .btn-success:focus, .btn-success:hover{color:#fff;background-color:#589ed7;text-decoration:none;}
-.More{position:relative;margin-top:2vw;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-flex-direction:row;-moz-flex-direction:row;-ms-flex-direction:row;-o-flex-direction:row;flex-direction:row;-webkit-box-align:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;-o-align-items:center;align-items:center;width:6vw;height:2vw;color:#fff;font-size:1vw;border:.1vw solid #fff;}
-.More > span{position:absolute;left:22px;z-index:9;-webkit-transition:all .3s linear;-moz-transition:all .3s linear;-o-transition:all .3s linear;transition:all .3s linear;}
-.More:before{content:"";position:absolute;left:50px;-webkit-transition:all .3s linear;-moz-transition:all .3s linear;-o-transition:all .3s linear;transition:all .3s linear;}
-.More:after{content:'';position:absolute;top:0;left:0;width:0;height:100%;z-index:1;opacity:0;background-color:#ea5420;-webkit-transition:all .3s;-moz-transition:all .3s;-o-transition:all .3s;transition:all .3s;}
-.More:hover{border-color:transparent;color:#fff;}
-.More:hover > span{left:10px;}
-.More:hover:before{content:">";position:absolute;left:55px;z-index:9;}
-.More:hover:after{opacity:1;width:100%;}
-#header{;}
 #header .tLogo img{height:5vw;max-height:97px;display:inline-block;vertical-align:middle;}
 #header .tLogo .logo_dec{display:inline-block;vertical-align:middle;}
 #header .tLogo .logo_dec .p1{font-size:2vw;font-weight:600;color:#174290;}
@@ -43,7 +32,15 @@ h3{font-size:1.4vw;line-height:1.4;}
 #webBanner .layui-carousel-ind ul{position:absolute;left:12vw;bottom:2vw;padding:.4vw;}
 #webBanner .layui-carousel-ind ul li{width:2vw;border-radius:0;background-color:#fff;-webkit-transition:.36s;-moz-transition:.36s;-ms-transition:.36s;-o-transition:.36s;transition:.36s;}
 #webBanner .layui-carousel-ind ul li.layui-this{width:5vw;background-color:#ea5420;-webkit-transition:.36s;-moz-transition:.36s;-ms-transition:.36s;-o-transition:.36s;transition:.36s;}
-.iService .iService-left{padding: 1vw 4vw 1vw;font-size: 1.4vw;color: #fff;background-color: #174290;}
-.iService .iService-left .p2{margin-top: .6vw;display: inline-block;padding: 0 3vw;border: .12vw solid #fff;}
-.iService .iService-left .iService-left-con{display: inline-block;text-align: center;}
-.iService .iService-right{color:#fff;background-color:#000;}
+.iService{position:relative;height:8vw;}
+.iService:before{position:absolute;content:"";left:0;height:100%;width:40%;background-color:#174290;z-index:-1;}
+.iService:after{position:absolute;content:"";right:0;height:100%;width:60%;background-color:#000; z-index:-1;}
+.iService .layui-container{position:absolute;top:1.4vw;left:0;right:0;}
+.iService .iService-left{position:absolute;left:16vw;font-size:1.4vw;color:#fff;text-align:center;}
+.iService .iService-left .p2{margin-top:.6vw;display:inline-block;padding:0 3vw;border:.1vw solid #fff;}
+.iService .iService-right{position:absolute;right:10vw;color:#fff;}
+.iService .iService-right .iService-box{padding:0 1.5vw;text-align:center;border-left:.1vw solid #fff;}
+.iService .iService-right .iService-box:first-child{border-left:0;}
+.iService .iService-right .iService-box .icon{display:inline; font-size:2.6vw;}
+.iService .iService-right .iService-box span{ margin-top:.4vw;display:block;font-size:1.2vw;}
+.iAbout .iAbout-pic{width: 100%;height: 25vw;box-shadow: 0.3vw 0.3vw 1vw 0.2vw rgba(0, 0, 0, 0.5);}
