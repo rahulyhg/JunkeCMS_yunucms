@@ -1,6 +1,6 @@
 html, body{height:100%;}
 html{height:1000px;}
-.layui-container, .layui-row{max-width:1200px;}
+.layui-container{max-width:1200px;}
 h2{font-size:2vw;line-height:1.4;}
 h3{font-size:1.4vw;line-height:1.4;}
 .web-title{padding:4.6vw 0;text-align:center;color:#3e3a39;}
@@ -43,3 +43,7 @@ h3{font-size:1.4vw;line-height:1.4;}
 #webBanner .layui-carousel-ind ul{position:absolute;left:12vw;bottom:2vw;padding:.4vw;}
 #webBanner .layui-carousel-ind ul li{width:2vw;border-radius:0;background-color:#fff;-webkit-transition:.36s;-moz-transition:.36s;-ms-transition:.36s;-o-transition:.36s;transition:.36s;}
 #webBanner .layui-carousel-ind ul li.layui-this{width:5vw;background-color:#ea5420;-webkit-transition:.36s;-moz-transition:.36s;-ms-transition:.36s;-o-transition:.36s;transition:.36s;}
+.iService .iService-left{padding: 1vw 4vw 1vw;font-size: 1.4vw;color: #fff;background-color: #174290;}
+.iService .iService-left .p2{margin-top: .6vw;display: inline-block;padding: 0 3vw;border: .12vw solid #fff;}
+.iService .iService-left .iService-left-con{display: inline-block;text-align: center;}
+.iService .iService-right{color:#fff;background-color:#000;}
