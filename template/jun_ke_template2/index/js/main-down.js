@@ -8,6 +8,6 @@ $("#header .main-menu a").each(function(){
 layui.use(['element','carousel'],function(){
     var layer=layui.layer,carousel=layui.carousel,element=layui.element;
     carousel.render({
-        elem:'#webBanner',width:'100%',interval:4000,arrow:'always',autoplay:true
+        elem:'#webBanner',width:'100%',height:'100%',interval:4000,arrow:'always',autoplay:true
     });
 });

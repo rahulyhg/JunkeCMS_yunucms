@@ -20,21 +20,21 @@ h3{font-size:1.4vw;line-height:1.4;}
 #header .tLogo .logo_dec{display:inline-block;vertical-align:middle;}
 #header .tLogo .logo_dec .p1{font-size:2vw;font-weight:600;color:#174290;}
 #header .tLogo .logo_dec .p2{font-size:1.2vw;color:#868686;}
-#header .tRight .icon{display:inline-block;vertical-align:middle;font-size:4vw;color:#f49030;}
+#header .tRight .icon{display:inline-block;vertical-align:middle;font-size:4vw;color:#ea5420;}
 #header .tRight .tRight_dec{padding-left:0.2vw;padding-right:2vw;display:inline-block;vertical-align:middle;}
 #header .tRight .tRight_dec .p1{font-size:1.5vw;color:#868686;}
-#header .tRight .tRight_dec .p2{font-size:2vw;color:#F49030; font-family:"Impact", serif;}
+#header .tRight .tRight_dec .p2{font-size:2vw;color:#ea5420; font-family:"Impact", serif;}
 #header .main-menu{background-color:#174290;}
 #header .main-menu li > a{display:inline-block;padding:0 2.6vw;text-align:center;height:100%;font-size:16px;color:#fff;}
 #header .main-menu li{position:relative;line-height:3vw; font-size:0;-webkit-transition:.36s;-moz-transition:.36s;-ms-transition:.36s;-o-transition:.36s;transition:.36s;}
 #header .main-menu li:hover{position:relative;overflow:inherit;}
-#header .main-menu li:hover > a, #header .main-menu li.active > a{background-color:#e06940;}
+#header .main-menu li:hover > a, #header .main-menu li.active > a{background-color:#ea5420;}
 #header .main-menu li dl{position:absolute;top:5vw;left:0;width:100%;opacity:0;visibility:hidden;text-align:center;z-index:99999;-webkit-transition:.36s;-moz-transition:.36s;-ms-transition:.36s;-o-transition:.36s;transition:.36s;}
 #header .main-menu li:hover dl{top:3.4vw;opacity:1;visibility:inherit;-webkit-transition:.36s;-moz-transition:.36s;-ms-transition:.36s;-o-transition:.36s;transition:.36s;}
 #header .main-menu li dl dd{ line-height:2.2;border-top:1px solid rgba(255, 255, 255, .5);background-color:rgba(0, 0, 0, .5);}
 #header .main-menu li dl dd:first-child{border-top:none;}
 #header .main-menu li dl dd a{display:inline-block;width:100%; font-size:1.2vw;color:#fff;}
-#header .main-menu li dl dd:hover a, #header .main-menu li dl dd.active a{color:#e06940;}
+#header .main-menu li dl dd:hover a, #header .main-menu li dl dd.active a{color:#ea5420;}
 #webBanner .layui-carousel-arrow{width:5vw;height:5vw;margin-top:-1vw;line-height:5vw;font-size:4vw;}
 #webBanner .web-banner .img{position:absolute;font-size:2.5vw;font-weight:600;}
 #webBanner .web-banner-1{color:#fff;background:url(../img/banner/banner1.jpg) no-repeat center/cover;}
